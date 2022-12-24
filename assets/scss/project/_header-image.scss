@@ -1,0 +1,39 @@
+@use "../global" as *;
+
+
+
+.sk-header-image__image {
+	position: relative;
+	top: -$hight__menu-heaer;
+	left: 0;
+	margin-bottom: -$hight__menu-heaer;
+	z-index: -1;
+}
+
+// // トップイメージの背景
+// .sk-header-image__image {
+// 	// background: url(/wp-content/uploads/2022/11/top_banner_01.jpg);
+// 	// height: $hight__image-heaer;
+// 	// background-size: cover;
+// 	// background-position: center center;
+// }
+
+.sk-header-image__text {
+	position: absolute;
+	top: $hight__menu-heaer;
+	left: 0;
+}
+
+.sk-header-image__title {
+
+}
+.sk-header-image__catchcopy {
+
+}
+
+.sk-header-image__destruction {
+
+}
+.sk-header-image__ccopyright {
+
+}

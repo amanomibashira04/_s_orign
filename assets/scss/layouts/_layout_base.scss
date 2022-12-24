@@ -1,0 +1,30 @@
+@use "../global" as *;
+
+
+
+/*-------------------------------------------*/
+/* siteContent
+/*-------------------------------------------*/
+.site {
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+	margin: 0 auto;
+	max-width: 1200px;
+	padding: 0 40px;
+
+
+	@include breakpoint(pc-l) {
+	}
+
+	@include breakpoint(pc-s) {
+	}
+
+	@include breakpoint(tab) {
+		padding: 0 40px;
+	}
+
+	@include breakpoint(sp) {
+		padding: 0 16px;
+	}
+}

@@ -1,0 +1,35 @@
+$containter-padding: 15px;
+
+
+$sk-width-container: 100%;
+$sk-width-container-padding: 15px;
+$sk-width-col-2-main: 66.6%;
+// サイドバーがjsでfixedにすると、ストレートな幅指定だと基準がウィンドウになってしまうため、コンテナ基準にしている
+$sk-width-col-2-sub: calc(var(sk-width-container) * 0.27);
+
+$sk-margin-meta: 0.5rem;
+$sk-margin-headding-bottom: 1.2em;
+$sk-margin-element-bottom: 1rem;
+$sk-margin-block-bottom: 2rem;
+$sk-margin-section-bottom: 3rem;
+
+$sk-size-text: 1.6rem;
+$sk-size-text-meta: 1.2rem;
+$sk-size-text-sm: 1.4rem;
+$sk-size-text-xs: 1.2rem;
+
+$sk-size-radius: 5px;
+$sk-size-radius-sm: calc(var(sk-size-radius) * 0.5);
+$sk-size-radius-lg: calc(var(sk-size-radius) * 1.5);
+
+$sk-line-height: 1.7em;
+$sk-line-height-low: 1.5em;
+
+// トップページのメニューの高さ
+$hight__menu-heaer: 75px;
+
+$sk-margin-list-menu-left-first: 1em;
+$sk-margin-list-menu-left: 1em;
+
+
+$sk-size-radius-compo:1em;

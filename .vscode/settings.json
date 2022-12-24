@@ -1,0 +1,41 @@
+{
+	"phpcs.executablePath": "/home/kawabata/DC_WP_s_orign/html/wp-content/themes/_s_orign/vendor/bin/phpcs",
+	"phpcbf.executablePath": "/home/kawabata/DC_WP_s_orign/html/wp-content/themes/_s_orign/vendor/bin/phpcbf",
+	"phpcs.standard": "WordPress", //phpcsにWordPressの規約を適用
+	"phpcbf.standard": "WordPress", //phpcdfにWordPressの規約を適用
+	"intelephense.stubs": [
+		"wordpress"
+	],
+	"editor.detectIndentation": false, //デフォルトのタブ設定を解除
+	"editor.insertSpaces": false, //インデントをタブ文字にする
+	"editor.tabSize": 4, // タブのサイズを４に変更
+	"files.eol": "\n", //改行コードを変更
+	"phpcbf.onsave": true,
+	"php-cs-fixer.executablePath": "/home/kawabata/DC_WP_s_orign/html/wp-content/themes/_s_orign/.vscode/php-cs-fixer-v3.phar",
+	"php-cs-fixer.formatHtml": true,
+	// "php-cs-fixer.rules": "wpcs",
+	"liveServer.settings.AdvanceCustomBrowserCmdLine": "/mnt/c/Program Files/Google/Chrome/Application/chrome.exe",
+	// Mainly for static files
+	"liveServer.settings.useWebExt": true,
+	// This means that you change your real URL (current PHP url)
+	// to another URL (which Live Sever starts).
+	"liveServer.settings.proxy": {
+		"enable": true,
+		"baseUri": "/",
+		"proxyUri": "http://localhost:8800/"
+	},
+	"liveSassCompile.settings.showOutputWindowOn": "Error",
+	"liveSassCompile.settings.formats": [
+		{
+			"format": "expanded",
+			"extensionName": ".css",
+			"savePath": "./",
+			"savePathReplacementPairs": null
+		}
+	],
+	"liveServer.settings.useLocalIp": false,
+	"liveServer.settings.CustomBrowser": "chrome"
+	// "editor.codeActionsOnSave": {
+	// 	"source.fixAll.eslint": true
+	// }
+}
