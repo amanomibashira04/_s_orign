@@ -1,9 +1,14 @@
 <?php
-
 /**
- * パンくずリストの読み込み
+ * パンくずリスト
  *
- * @package myportfolio
+ * You can add an optional custom header image to header.php like so ...
+ *
+	<?php custom_breadcrumb(); ?>
+ *
+ * @link https://developer.wordpress.org/themes/functionality/custom-headers/
+ *
+ * @package _s_orign_orign
  */
 
 // パンくずリスト
@@ -21,7 +26,7 @@ if ( ! function_exists( 'custom_breadcrumb' ) ) {
 		// JSON-LD用のデータを保持する変数
 		$json_array = array();
 
-		echo '<div id="breadcrumb">' .
+		echo '<div id="breadcrumb" class="breadcrumb">' .
 		'<ul>' .
 		'<li>' .
 		'<a href="' . esc_url( home_url( '/' ) ) . '"><span>ホーム</span></a>' .

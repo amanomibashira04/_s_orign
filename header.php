@@ -10,8 +10,8 @@
  */
 
 ?>
-<!-- basic認証start -->
 
+<!-- basic認証start -->
 <?php
 /**
 if ( ! is_home() ) :
@@ -24,9 +24,7 @@ if ( ! is_home() ) :
 endif;
  */
 ?>
-
 <!-- basic認証end -->
-
 
 <!doctype html>
 <html <?php language_attributes(); ?>>
@@ -82,7 +80,6 @@ endif;
 							);
 							?>
 				</nav>
-
 			<!-- ヘッダー背景 -->
 			<?php
 			/**

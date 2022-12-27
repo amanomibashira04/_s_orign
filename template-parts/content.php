@@ -22,17 +22,15 @@
 		<?php
 		if ( 'post' === get_post_type() ) :
 			?>
-			<div class="entry-meta">
-				<?php
+		<div class="entry-meta">
+			<?php
 				_s_orign_posted_on();
 				_s_orign_posted_by();
-				?>
-			</div><!-- .entry-meta -->
+			?>
+		</div><!-- .entry-meta -->
 		<?php endif; ?>
 	</header><!-- .entry-header -->
-
 	<?php _s_orign_post_thumbnail(); ?>
-
 	<div class="entry-content">
 		<?php
 		the_content(
@@ -49,7 +47,6 @@
 				wp_kses_post( get_the_title() )
 			)
 		);
-
 		wp_link_pages(
 			array(
 				'before' => '<div class="page-links">' . esc_html__( 'Pages:', '_s_orign_orign' ),
@@ -58,7 +55,6 @@
 		);
 		?>
 	</div><!-- .entry-content -->
-
 	<footer class="entry-footer">
 		<?php _s_orign_entry_footer(); ?>
 	</footer><!-- .entry-footer -->

@@ -11,8 +11,16 @@ body {
 	background: $color__background-body; // Fallback for when there is no custom background color defined.
 }
 
-html,body {
+body,
+button,
+input,
+select,
+optgroup,
+textarea {
+	color: $color__text-main;
 	font-family: $font__main;
+	font-size: 1.6rem;
+	line-height: $font__line-height-body;
 }
 
 *,::before,::after {
@@ -41,7 +49,7 @@ ol,
 dl,
 blockquote,
 iframe {
-	margin-bottom:$sk-margin-element-bottom;
+	// margin-bottom:$sk-margin-element-bottom;
 }
 
 a {
@@ -67,6 +75,7 @@ a {
 p {
 	line-height: $sk-line-height;
 	margin-block-start:0;
+	// margin-bottom: 1.5em;
 }
 
 ul,
@@ -75,6 +84,7 @@ dl,
 table,
 blockquote,
 div,
+address,
 p {
 	& + h1,
 	& + h2,
@@ -92,12 +102,12 @@ figure {
 	& + h1,
 	& + h2,
 	& + h3 {
-		margin-top:2em;
+		// margin-top:2em;
 	}
 	& + h4,
 	& + h5,
 	& + h6 {
-		margin-top:$sk-margin-headding-bottom;
+		// margin-top:$sk-margin-headding-bottom;
 	}
 }
 
@@ -131,8 +141,8 @@ ol{
 	padding-left:1.5em;
 }
 li {
-	margin-top:0.5em;
-	margin-bottom:0.5em;
+	// margin-top:0.5em;
+	// margin-bottom:0.5em;
 }
 
 // 引用
@@ -158,7 +168,7 @@ hr {
 	background-color: $color__background-hr;
 		border: 0;
 		height: 1px;
-		margin-bottom: 1.5em;
+		// margin-bottom: 1.5em;
 	// border:1px solid $sk-color-border-hr;
 }
 
@@ -235,7 +245,7 @@ iframe {
 
 dt {
 	font-weight: bold;
-	margin-bottom:0.5em;
+	// margin-bottom:0.5em;
 }
 dd {
 	margin-left:0;

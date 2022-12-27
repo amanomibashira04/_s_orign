@@ -3,7 +3,7 @@
         "@wordpress/stylelint-config/scss"
     ],
     "ignoreFiles": [
-        "sass/_normalize.scss"
+        "/assets/scss/common/_reset.scss"
     ],
     "rules": {
         "font-family-no-missing-generic-family-keyword": null,
