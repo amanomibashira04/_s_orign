@@ -3,9 +3,13 @@
 
 
 .site-header {
-	display: flex;
-	position: relative;
-	z-index: 999;
+	z-index: 9999;
+	.container {
+		// 内容によってはグリッドフォーマットで
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+	}
 }
 
 .site-branding {

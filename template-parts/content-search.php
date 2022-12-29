@@ -22,7 +22,7 @@
 		</div><!-- .entry-meta -->
 		<?php endif; ?>
 	</header><!-- .entry-header -->
-
+	<?php custom_breadcrumb(); ?>
 	<?php _s_orign_post_thumbnail(); ?>
 
 	<div class="entry-summary">

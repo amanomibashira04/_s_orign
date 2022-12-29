@@ -117,7 +117,7 @@ if ( ! function_exists( 'custom_breadcrumb' ) ) {
 						echo '<li>' .
 						' <a href="' . $parent_link . '">' .
 						'<span>' . $parent_name . '</span>' .
-						'</a> > ' .
+						// '</a> > ' .
 						'</li>';
 						// JSON-LDデータ
 						$json_array[] = array(
@@ -133,7 +133,7 @@ if ( ! function_exists( 'custom_breadcrumb' ) ) {
 				echo '<li>' .
 				' <a href="' . $term_link . '">' .
 				'<span>' . $term_name . '</span>' .
-				'</a> > ' .
+				// '</a> > ' .
 				'</li>';
 				// JSON-LDデータ
 				$json_array[] = array(
@@ -160,7 +160,7 @@ if ( ! function_exists( 'custom_breadcrumb' ) ) {
 					echo '<li>' .
 					'<a href="' . $parent_link . '">' .
 					'<span>' . $parent_name . '</span>' .
-					'</a> > ' .
+					// '</a> > ' .
 					'</li>';
 					// JSON-LDデータ
 					$json_array[] = array(
@@ -190,7 +190,7 @@ if ( ! function_exists( 'custom_breadcrumb' ) ) {
 					echo '<li>' .
 					' <a href="' . $parent_link . '">' .
 					'<span>' . $parent_name . '</span>' .
-					'</a> > ' .
+					// '</a> > ' .
 					'</li>';
 					// JSON-LDデータ
 					$json_array[] = array(

@@ -18,18 +18,18 @@
 			the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
 		endif;
 		?>
-		<?php custom_breadcrumb(); ?>
 		<?php
 		if ( 'post' === get_post_type() ) :
 			?>
-		<div class="entry-meta">
+		<?php endif; ?>
+	</header><!-- .entry-header -->
+	<?php custom_breadcrumb(); ?>
+	<div class="entry-meta">
 			<?php
 				_s_orign_posted_on();
 				_s_orign_posted_by();
 			?>
 		</div><!-- .entry-meta -->
-		<?php endif; ?>
-	</header><!-- .entry-header -->
 	<?php _s_orign_post_thumbnail(); ?>
 	<div class="entry-content">
 		<?php

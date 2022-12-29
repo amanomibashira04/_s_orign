@@ -43,6 +43,7 @@ endif;
 			href="#primary"><?php esc_html_e( 'Skip to content', 'underscores_orign' ); ?></a>
 		<header id="masthead" class="site-header">
 			<!-- ヘッダーメニュー -->
+			<div class="container">
 				<div class="site-branding">
 					<?php the_custom_logo(); ?>
 					<?php if ( ! has_custom_logo() ) { ?>
@@ -80,10 +81,11 @@ endif;
 							);
 							?>
 				</nav>
-			<!-- ヘッダー背景 -->
-			<?php
-			/**
-			<?php get_template_part( 'inc/header-image' );?>
-			 */
-			?>
+				<!-- ヘッダー背景 -->
+				<?php
+				/**
+				get_template_part( 'inc/header-image' );
+				*/
+				?>
+			</div>
 		</header><!-- #masthead -->

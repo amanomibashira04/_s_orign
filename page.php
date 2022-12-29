@@ -15,7 +15,7 @@
 
 get_header();
 ?>
-<div class="main-sidebar__wrapper">
+<div class="container  main-aside__wrapper">
 	<main id="primary" class="site-main">
 		<?php
 		while ( have_posts() ) :
@@ -25,12 +25,9 @@ get_header();
 			if ( comments_open() || get_comments_number() ) :
 				comments_template();
 				endif;
-			endwhile; // End of the loop.
+				endwhile; // End of the loop.
 		?>
 	</main><!-- #main -->
-	<?php
-		get_sidebar();
-	?>
 </div>
 <?php
 get_footer();
