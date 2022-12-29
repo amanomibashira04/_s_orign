@@ -4,50 +4,64 @@
 
 /*Contact Form 7カスタマイズ*/
 /*スマホContact Form 7カスタマイズ*/
-@media (max-width: 500px) {
+@include breakpoint(sp) {
+	.inquiry {
 
-	.inquiry th,
-	.inquiry td {
-		display: block !important;
-		width: 100% !important;
-		border-top: none !important;
-		-webkit-box-sizing: border-box !important;
-		-moz-box-sizing: border-box !important;
-		box-sizing: border-box !important;
+		th,
+		td {
+			display: block !important;
+			width: 100% !important;
+			border-top: none !important;
+			-webkit-box-sizing: border-box !important;
+			-moz-box-sizing: border-box !important;
+			box-sizing: border-box !important;
+		}
+
+		tr:first-child th {
+			border-top: 1px solid #d7d7d7 !important;
+		}
+
+		/* 必須・任意のサイズ調整 */
+		.haveto,
+		.any {
+			font-size: 10px;
+		}
 	}
 
-	.inquiry tr:first-child th {
-		border-top: 1px solid #d7d7d7 !important;
-	}
-
-	/* 必須・任意のサイズ調整 */
-	.inquiry .haveto,
-	.inquiry .any {
-		font-size: 10px;
-	}
 }
 
-/*見出し欄*/
-.inquiry th {
-	text-align: left;
-	font-size: 1.6rem;
-	color: #444;
-	padding-right: 5px;
-	width: 30%;
-	background: #f7f7f7;
-	border: solid 1px #d7d7d7;
-}
+.inquiry {
+	width: 100%;
 
-/*通常欄*/
-.inquiry td {
-	font-size: 1.6rem;
-	border: solid 1px #d7d7d7;
+	p {
+		margin-bottom: 0;
+	}
+
+	/*見出し欄*/
+	th {
+		text-align: left;
+		font-size: 1.6rem;
+		color: #444;
+		padding-right: 5px;
+		width: 30%;
+		background: #f7f7f7;
+		border: solid 1px #d7d7d7;
+	}
+
+	/*通常欄*/
+	td {
+		font-size: 1.6rem;
+		border: solid 1px #d7d7d7;
+	}
 }
 
 /*横の行とテーブル全体*/
-.entry-content .inquiry tr,
-.entry-content table {
-	border: solid 1px #d7d7d7;
+.entry-content {
+
+	.inquiry tr,
+	table {
+		border: solid 1px #d7d7d7;
+	}
 }
 
 /*必須の調整*/

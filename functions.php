@@ -117,7 +117,7 @@ add_action( 'after_setup_theme', '_s_orign_setup' );
  * @global int $content_width
  */
 function _s_orign_content_width() {
-	$GLOBALS['content_width'] = apply_filters( '_s_orign_content_width', 640 );
+	$GLOBALS['content_width'] = apply_filters( '_s_orign_content_width', 768 );
 }
 add_action( 'after_setup_theme', '_s_orign_content_width', 0 );
 

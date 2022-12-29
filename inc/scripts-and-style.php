@@ -8,7 +8,7 @@ function _s_orign_scripts() {
 	// This css is modern.css(wpsk addition).
 	// wp_enqueue_style( 'reset_css', 'https://unpkg.com/modern-css-reset/dist/reset.min.css', array(), false, 'all' );
 	// This css is ress.css(wpsk addition).
-	// wp_enqueue_style( 'reset_css', 'https://unpkg.com/ress/dist/ress.min.css', array(), false, 'all' );
+	wp_enqueue_style( 'reset_css', 'https://unpkg.com/ress/dist/ress.min.css', array(), false, 'all' );
 	wp_enqueue_style( '_s_orign_orign-style', get_stylesheet_uri(), array(), _S_VERSION );
 	wp_style_add_data( '_s_orign_orign-style', 'rtl', 'replace' );
 	// wp_enqueue_style( 'swiper_css', 'https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css', array(), false, 'all' );

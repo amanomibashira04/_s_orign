@@ -1,10 +1,10 @@
-@use "_reset";
+// @use "_common-reset";
 @use "_common";
 @use "_common-theme-json";
 @use "_customize-shortcut";
-@use "_print";
+@use "_common-print";
 
-@use "_buttons";
-@use "_fields";
-// @use "_links";
-@use "_lists";
+@use "_common-buttons";
+@use "_common-forms";
+@use "_common-links";
+@use "_common-lists";
