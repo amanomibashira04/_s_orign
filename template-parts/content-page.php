@@ -10,19 +10,12 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<header class="entry-header">
-		<?php if ( is_front_page() ) : ?>
-		<?php else : ?>
-			<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
-		<?php endif ?>
-	</header><!-- .entry-header -->
-	<?php custom_breadcrumb(); ?>
+	<header class="page-header">
+	</header><!-- .page-header -->
 	<?php _s_orign_post_thumbnail(); ?>
-
-	<div class="entry-content">
+	<div class="page-content">
 		<?php
 		the_content();
-
 		wp_link_pages(
 			array(
 				'before' => '<div class="page-links">' . esc_html__( 'Pages:', '_s_orign_orign' ),
@@ -30,10 +23,9 @@
 			)
 		);
 		?>
-	</div><!-- .entry-content -->
-
+	</div><!-- .page-content -->
 	<?php if ( get_edit_post_link() ) : ?>
-	<footer class="entry-footer">
+	<footer class="page-footer">
 		<?php
 			edit_post_link(
 				sprintf(
@@ -52,6 +44,6 @@
 				'</span>'
 			);
 		?>
-	</footer><!-- .entry-footer -->
+	</footer><!-- .page-footer -->
 	<?php endif; ?>
 </article><!-- #post-<?php the_ID(); ?> -->

@@ -5,11 +5,6 @@
 /*-------------------------------------------*/
 /* siteContent
 /*-------------------------------------------*/
-.site {
-	display: flex;
-	flex-direction: column;
-	min-height: 100vh;
-}
 
 .container {
 	margin-left: auto;
@@ -25,6 +20,7 @@
 
 	@include breakpoint(tab) {
 
+		.page-content,
 		.entry-content {
 			padding: 0 40px;
 		}
@@ -36,6 +32,7 @@
 
 	@include breakpoint(sp) {
 
+		.page-content,
 		.entry-content {
 			padding: 0 20px;
 		}
@@ -46,12 +43,24 @@
 	}
 }
 
+.site {
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+}
 
+.site-header {
+	z-index: 9999;
+}
 
-.main-aside__wrapper {
+.site-body {
+	flex: 1;
+	padding: 5.6rem 0 6.4rem;
+}
+
+.site-body-container {
 	display: flex;
 	gap: 30px;
-	flex: 1;
 
 	.site-main {
 		flex: 1;
@@ -61,4 +70,7 @@
 		width: 300px;
 	}
 
+}
+
+.site-footer {
 }

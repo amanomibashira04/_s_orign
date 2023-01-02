@@ -11,25 +11,7 @@
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<header class="entry-header">
-		<?php
-		if ( is_singular() ) :
-			the_title( '<h1 class="entry-title">', '</h1>' );
-		else :
-			the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
-		endif;
-		?>
-		<?php
-		if ( 'post' === get_post_type() ) :
-			?>
-		<?php endif; ?>
 	</header><!-- .entry-header -->
-	<?php custom_breadcrumb(); ?>
-	<div class="entry-meta">
-			<?php
-				_s_orign_posted_on();
-				_s_orign_posted_by();
-			?>
-		</div><!-- .entry-meta -->
 	<?php _s_orign_post_thumbnail(); ?>
 	<div class="entry-content">
 		<?php
@@ -55,6 +37,12 @@
 		);
 		?>
 	</div><!-- .entry-content -->
+	<div class="entry-meta">
+			<?php
+				_s_orign_posted_on();
+				_s_orign_posted_by();
+			?>
+		</div><!-- .entry-meta -->
 	<footer class="entry-footer">
 		<?php _s_orign_entry_footer(); ?>
 	</footer><!-- .entry-footer -->

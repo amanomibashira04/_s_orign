@@ -10,24 +10,25 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<header class="entry-header">
-		<?php the_title( sprintf( '<h2 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' ); ?>
-
-		<?php if ( 'post' === get_post_type() ) : ?>
+	<header class="entry-content">
+		<?php the_title( sprintf( '<h3 ><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h3>' ); ?>
+	</header><!-- .entry-header -->
+	<?php _s_orign_post_thumbnail(); ?>
+	<div class="entry-summary">
+		<?php the_excerpt(); ?>
+	</div><!-- .entry-summary -->
+	<?php
+	if ( 'post' === get_post_type() ) :
+		?>
 		<div class="entry-meta">
 			<?php
 			_s_orign_posted_on();
 			_s_orign_posted_by();
 			?>
 		</div><!-- .entry-meta -->
-		<?php endif; ?>
-	</header><!-- .entry-header -->
-	<?php custom_breadcrumb(); ?>
-	<?php _s_orign_post_thumbnail(); ?>
-
-	<div class="entry-summary">
-		<?php the_excerpt(); ?>
-	</div><!-- .entry-summary -->
+		<?php
+	endif;
+	?>
 
 	<footer class="entry-footer">
 		<?php _s_orign_entry_footer(); ?>

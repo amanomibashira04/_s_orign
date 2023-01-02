@@ -78,11 +78,11 @@ figure {
 // 	}
 // }
 
-// p {
-// 	line-height: $sk-line-height;
-// 	margin-block-start: 0;
-// 	margin-bottom: 1.5em;
-// }
+p {
+	line-height: $sk-line-height;
+	margin-block-start: 0;
+	// margin-bottom: 1.5em;
+}
 
 // ul,
 // ol,
@@ -120,20 +120,19 @@ figure {
 // 	}
 // }
 
-// h1,
-// h2,
-// h3,
-// h4,
-// h5,
-// h6 {
-// 	margin-top: 0;
-// 	margin-bottom: $sk-margin-headding-bottom;
-// 	line-height: $sk-line-height-low;
+h2,
+h3,
+h4,
+h5,
+h6 {
+	margin-top: 0;
+	margin-bottom: $sk-margin-headding-bottom;
+	line-height: $sk-line-height-low;
 
-// 	a {
-// 		text-decoration: none;
-// 	}
-// }
+	a {
+		text-decoration: none;
+	}
+}
 
 h2 {
 	font-size: 2.8rem;
@@ -160,10 +159,10 @@ ol {
 	padding-left: 1.5em;
 }
 
-// li {
-// 	margin-top: 0.5em;
-// 	margin-bottom: 0.5em;
-// }
+li {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
 
 // 引用
 blockquote {
@@ -178,7 +177,6 @@ blockquote {
 // }
 
 // hr {
-
 // 	background-color: $color__background-hr;
 // 	border: 0;
 // 	height: 1px;
@@ -186,100 +184,100 @@ blockquote {
 // 	// border:1px solid $sk-color-border-hr;
 // }
 
-// /* Reset iOS Style */
-// input[type="submit"],
-// input[type="button"] {
-// 	-webkit-box-sizing: border-box;
-// 	-webkit-appearance: button;
-// 	appearance: button;
+/* Reset iOS Style */
+input[type="submit"],
+input[type="button"] {
+	-webkit-box-sizing: border-box;
+	-webkit-appearance: button;
+	appearance: button;
 
-// 	&::-webkit-search-decoration {
-// 		display: none;
-// 	}
+	&::-webkit-search-decoration {
+		display: none;
+	}
 
-// 	&::focus {
-// 		outline-offset: -2px;
-// 	}
-// }
+	&::focus {
+		outline-offset: -2px;
+	}
+}
 
-// input:where(:not([type=checkbox], [type=radio])),
-// select {
-// 	-webkit-appearance: none;
-// 	appearance: none;
-// }
+input:where(:not([type=checkbox], [type=radio])),
+select {
+	-webkit-appearance: none;
+	appearance: none;
+}
 
-// /* Make sure embeds and iframes fit their containers. */
-// embed,
-// iframe,
-// object {
-// 	max-width: 100%;
-// }
+/* Make sure embeds and iframes fit their containers. */
+embed,
+iframe,
+object {
+	max-width: 100%;
+}
 
 img {
 	height: auto; // Make sure images are scaled correctly.
 	max-width: 100%; // Adhere to container width.
-	vertical-align: bottom;
+	vertical-align: top;
 }
 
 // figure {
 // 	margin: 1em 0; // Extra wide images within figure tags don't overflow the content area.
 // }
 
-// /* / Reset iOS Style */
+/* / Reset iOS Style */
 
-// input[type=text],
-// input[type=number],
-// input[type=email],
-// input[type=tel],
-// input[type=url],
-// input[type=date],
-// input[type=password],
-// select,
-// textarea {
-// 	font-size: 1.6rem;
-// 	border: 1px solid $sk-color-border-form;
-// 	border-radius: $sk-size-radius;
-// 	padding: 0.8em 1em;
-// 	// bottomはすぐ下にキャプションつけたりする場合があるので若干余白をもたせた方が良いが、
-// 	// 上部に余白をつけるとWooCommerceなどすぐとなりにボタンがある場合など段差ができるので上部に余白はつけない
-// 	margin: 0 0 0.5rem;
-// 	width: 100%;
-// 	color: $sk-color-text-body; // iOS で文字色が hover 色にされるため上書き
-// 	background-color: #fff;
-// }
+input[type=text],
+input[type=number],
+input[type=email],
+input[type=tel],
+input[type=url],
+input[type=date],
+input[type=password],
+select,
+textarea {
+	font-size: 1.6rem;
+	border: 1px solid $sk-color-border-form;
+	border-radius: $sk-size-radius;
+	// padding: 0.8em 1em;
+	// bottomはすぐ下にキャプションつけたりする場合があるので若干余白をもたせた方が良いが、
+	// 上部に余白をつけるとWooCommerceなどすぐとなりにボタンがある場合など段差ができるので上部に余白はつけない
+	margin: 0 0 0.5rem;
+	width: 100%;
+	color: $sk-color-text-body; // iOS で文字色が hover 色にされるため上書き
+	background-color: #fff;
+}
 
-// input[type=file] {
-// 	margin: 0.5rem 0;
-// }
+input[type=file] {
+	margin: 0.5rem 0;
+}
 
-// input[type=submit] {
-// 	font-size: 1.6rem;
-// 	border: 1px solid $sk-color-primary-dark;
-// 	background-color: $sk-color-primary;
-// 	color: #fff;
-// 	padding: 0.5em 2em;
-// 	border-radius: $sk-size-radius;
+input[type=submit] {
+	font-size: 1.6rem;
+	border: 1px solid $sk-color-primary-dark;
+	background-color: $sk-color-primary;
+	color: #fff;
+	padding: 0.5em 2em;
+	border-radius: $sk-size-radius;
 
-// 	&:hover {
-// 		color: #fff;
-// 		cursor: pointer;
-// 		background-color: $sk-color-primary-dark;
-// 	}
-// }
+	&:hover {
+		color: #fff;
+		cursor: pointer;
+		background-color: $sk-color-primary-dark;
+	}
+}
 
-// table {
-// 	border-top: 1px solid $sk-color-border-hr;
-// 	border-bottom: none;
-// 	border-collapse: collapse;
-// 	border-spacing: 0;
+table {
+	border-top: 1px solid $sk-color-border-hr;
+	border-bottom: none;
+	border-collapse: collapse;
+	border-spacing: 0;
 
-// 	th,
-// 	td {
-// 		border: 1px solid $sk-color-border-hr;
-// 		padding: 0.5rem 1rem;
-// 		font-size: $sk-size-text-sm;
-// 	}
-// }
+	th,
+	td {
+		border: 1px solid $sk-color-border-hr;
+		padding: 0.5rem 1rem;
+		font-size: $sk-size-text-sm;
+	}
+}
 
 // iframe {
 // 	border: none;

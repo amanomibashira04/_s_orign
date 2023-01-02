@@ -1,38 +1,31 @@
-@import "@bootstrap/functions";
-@import "bootstrap_variables";
-@import "@bootstrap/mixins";
-@import "@bootstrap/utilities";
-@import "@bootstrap/grid";
-@import "@bootstrap/buttons";
-@import "@bootstrap/card";
-@import "@bootstrap/alert";
-@import "@bootstrap/media";
-@import "../../inc/vk-components/package/_scss/vk-components.scss";
-@import "variables";
+// @import "@bootstrap/functions";
+// @import "bootstrap_variables";
+// @import "@bootstrap/mixins";
+// @import "@bootstrap/utilities";
+// @import "@bootstrap/grid";
+// @import "@bootstrap/buttons";
+// @import "@bootstrap/card";
+// @import "@bootstrap/alert";
+// @import "@bootstrap/media";
+// @import "../../inc/vk-components/package/_scss/vk-components.scss";
 
-@import "utils";
-@import "block/block";
-@import "block/block-editor";
-@import "block/block_editor_width";
+// @import "utils";
+@use "block";
 
-@import "components/nav";
-@import "components/searchform";
-@import "overwrite/vk-components";
-@import "overwrite/button";
-@import "overwrite/swiper";
-@import "project/pagenation";
+@use "overwrite";
+// @import "components/nav";
+// @import "components/searchform";
+// @import "project/pagenation";
 
 .editor-styles-wrapper {
-	@import "common";
-	@import "common-theme-json";
-	font-family :  var(--wp--preset--font-family--system-font);
+	@use "common";
+	@use "common-theme-json";
+	font-family :  $font__main;
 	&,
 	& p {
-		font-size : var(--vk-size-text);
+		font-size : $sk-size-text;
 	}
 }
-
-@import "common-editor";
 
 .edit-post-meta-boxes-area {
     h4 {

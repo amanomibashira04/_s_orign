@@ -1,16 +1,32 @@
 @use "../global" as *;
 
-.tabs-group{
-	display: flex;
-}
 
-.tab {
-	padding: 5px;
-	list-style: none;
-	border: solid #CCC;
-	cursor: pointer;
-	border-width: 1px 1px 0 1px;
-	border-radius: 10px 10px 0 0 ;
+.tabs-panel {
+	li {
+		margin: 0;
+	}
+
+	ol,
+	ul {
+		padding: 0;
+	}
+
+	.tabs-group {
+		display: flex;
+
+		.tab {
+			padding: 5px;
+			list-style: none;
+			border: solid #CCC;
+			cursor: pointer;
+			border-width: 1px 1px 0 1px;
+		}
+		.tab.is-active {
+			background: #cccccc;
+			color: #FFF;
+			transition: all 0.2s ease-out;
+		}
+	}
 }
 
 .panel-group {
@@ -19,24 +35,17 @@
 	background: #eee;
 	border-width: 1px 1px 0 1px;
 
+	.panel {
+		height: 0;
+		opacity: 0;
+		visibility: hidden;
+	}
+	.panel.is-show {
+		border: solid 1px #CCC;
+		border-width: 1px;
+		height: auto;
+		opacity: 1;
+		visibility: visible;
+	}
 }
 
-.panel {
-	height: 0;
-	opacity: 0;
-	visibility: hidden;
-}
-
-.tab.is-active {
-	background: #cccccc;
-	color: #FFF;
-	transition: all 0.2s ease-out;
-}
-
-.panel.is-show {
-	border: solid 1px #CCC;
-	border-width: 1px;
-	height: auto;
-	opacity: 1;
-	visibility: visible;
-}

@@ -1,5 +1,7 @@
+@use "_site-header";
+@use "_site-body";
+@use "_site-footer";
 @use "_breadcrumb";
 @use "_contact7";
-@use "_header";
-// @use "_entry";
-// @use "_pagenation";
+
+@use "_comment";
