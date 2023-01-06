@@ -1,89 +1,89 @@
 <?php
-/**
- * パンくずリスト
- *
- * You can add an optional custom header image to header.php like so ...
- *
-	<?php breadcrumb(); ?>
- *
- * @link https://developer.wordpress.org/themes/functionality/custom-headers/
- *
- * @package _s_orign_orign
- */
 
-// パンくずリスト
-function getBC( $cat_id, $inLevel ) {
-	$cat_list = array();
-	$stBCMain = '';
-	while ( $cat_id ) {
-		$cat      = get_category( $cat_id );
-		$cat_link = get_category_link( $cat_id );
-		array_unshift( $cat_list, '<a href="' . $cat_link . '" itemprop="item"><span itemprop="name">' . $cat->name . '</span></a>' );
-		$cat_id = $cat->parent;
-	}
-	foreach ( $cat_list as $value ) {
-		$stBCMain .= '<li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">' . $value . '<meta itemprop="position" content="' . $inLevel++ . '" /></li>';
-	}
-	return array( $stBCMain, $inLevel );
-}
-function getCateBC( $cat_id, $inLevel ) {
-	$cat_list = array();
-	$stBCMain = '';
-	while ( $cat_id ) {
-		$cat      = get_category( $cat_id );
-		$cat_link = get_category_link( $cat_id );
-		array_unshift( $cat_list, '<a href="' . $cat_link . '" itemprop="item"><span itemprop="name">' . $cat->name . '</span></a>' );
-		if ( $cat_id->category_parent == 0 ) {
-			break; }
-		$cat_id = $cat_id->category_parent;
-	}
-	foreach ( $cat_list as $value ) {
-		$stBCMain .= '<li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">' . $value . '<meta itemprop="position" content="' . $inLevel++ . '" /></li>';
-	}
-	return array( $stBCMain, $inLevel );
-}
-function breadcrumb() {
-	$inLevel  = 1;
-	$stBCHead = '<div><ol class="breadcrumb" itemscope itemtype="https://schema.org/BreadcrumbList">';
-	// ホーム > と表示
-	$stBCHead .= '<li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a href="/" itemprop="item"><span itemprop="name">ホーム</span></a><meta itemprop="position" content="' . $inLevel++ . '" /></li>';
-	// ページでの階層表示
-	$stBCFoot = '</ol></div>';
-	$stListE  = '<li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a href="" itemprop="item"><span itemprop="name">%s</span></a><meta itemprop="position" content="%s" /></li>';
-	if ( is_single() ) {
-		// 通常ページ
-		$cat_id  = 0;
-		$cats    = get_the_category();
-		$cat_num = count( $cats );
-		for ( $i = 0;$i < $cat_num;$i++ ) {
-			if ( isset( $cats[ $i ]->term_id ) ) {
-				$cat_id = $cats[ $i ]->term_id;
-			} else {
-				break;
+/*
+========================================================
+パンくずリスト（microdata形式）
+=========================================================*/
+function breadcrumb( $divOption = array(
+	'id'    => 'breadcrumb',
+	'class' => 'breadcrumb',
+) ) {
+	global $post;
+	$str = '';
+	if ( ! is_home() && ! is_front_page() && ! is_admin() ) { /* !is_admin は管理ページ以外という条件分岐 */
+		$tagAttribute = '';
+		foreach ( $divOption as $attrName => $attrValue ) {
+			$tagAttribute .= sprintf( ' %s="%s"', $attrName, $attrValue );
+		}
+		$str .= '<div' . $tagAttribute . '><div class="container">';
+		$str .= '';
+		$str .= '<a href="' . home_url() . '/"> TOP</a>';
+		$str .= '&nbsp;｜&nbsp;';
+
+		if ( is_category() ) { // カテゴリーのアーカイブページ
+			$cat = get_queried_object();
+			if ( $cat->parent != 0 ) {
+				$ancestors = array_reverse( get_ancestors( $cat->cat_ID, 'category' ) );
+				foreach ( $ancestors as $ancestor ) {
+					$str .= '<a href="' . get_category_link( $ancestor ) . '">' . get_cat_name( $ancestor ) . '</a>';
+					$str .= '&nbsp;｜&nbsp;';
+				}
 			}
-			list($stBCMain, $inNewLevel) = getBC( $cat_id, $inLevel );
-			$stBCCur                     = sprintf( $stListE, get_the_title(), $inNewLevel );
-			echo $stBCHead . $stBCMain . $stBCCur . $stBCFoot . "\n";
+			$str .= '<a href="' . get_category_link( $cat->term_id ) . '">' . $cat->cat_name . '</a>';
+
+		} elseif ( is_single() ) {  // ブログの個別記事ページ
+			$categories = get_the_category( $post->ID );
+			$cat        = $categories[0];
+			if ( $cat->parent != 0 ) {
+				$ancestors = array_reverse( get_ancestors( $cat->cat_ID, 'category' ) );
+				foreach ( $ancestors as $ancestor ) {
+					$str .= '<a href="' . get_category_link( $ancestor ) . '">' . get_cat_name( $ancestor ) . '</a>';
+					$str .= '&nbsp;｜&nbsp;';
+				}
+			}
+			$str .= '<a href="' . get_category_link( $cat->term_id ) . '">' . $cat->cat_name . '</a>';
+			$str .= '&nbsp;｜&nbsp;';
+			$str .= '' . $post->post_title . '';
+		} elseif ( is_page() ) {    // 固定ページ
+			if ( $post->post_parent != 0 ) {
+				$ancestors = array_reverse( get_post_ancestors( $post->ID ) );
+				foreach ( $ancestors as $ancestor ) {
+					$str .= '<a href="' . get_permalink( $ancestor ) . '">' . get_the_title( $ancestor ) . '</a>';
+					$str .= '&nbsp;｜&nbsp;';
+				}
+			}
+
+			$str .= '' . $post->post_title . '';
+		} elseif ( is_date() ) {    // 日付ベースのアーカイブページ
+			if ( get_query_var( 'day' ) != 0 ) {  // 年別アーカイブ
+				$str .= '<a href="' . get_year_link( get_query_var( 'year' ) ) . '">' . get_query_var( 'year' ) . '年</a>';
+				$str .= '<li>&gt;</li>';
+				$str .= '<a href="' . get_month_link( get_query_var( 'year' ), get_query_var( 'monthnum' ) ) . '">' . get_query_var( 'monthnum' ) . '月</a>';
+				$str .= '<li>&gt;</li>';
+				$str .= '' . get_query_var( 'day' ) . '日';
+			} elseif ( get_query_var( 'monthnum' ) != 0 ) {   // 月別アーカイブ
+				$str .= '<a href="' . get_year_link( get_query_var( 'year' ) ) . '">' . get_query_var( 'year' ) . '年</a>';
+				$str .= '<li>&gt;</li>';
+				$str .= '' . get_query_var( 'monthnum' ) . '月';
+			} else {    // 年別アーカイブ
+				$str .= '' . get_query_var( 'year' ) . '年';
+			}
+		} elseif ( is_search() ) { // 検索結果表示ページ
+			$str .= '「' . get_search_query() . '」で検索した結果';
+		} elseif ( is_author() ) {  // 投稿者のアーカイブページ
+			$str .= '投稿者 : ' . get_the_author_meta( 'display_name', get_query_var( 'author' ) ) . '';
+		} elseif ( is_tag() ) { // タグのアーカイブページ
+			$str .= 'タグ : ' . single_tag_title( '', false ) . '';
+		} elseif ( is_attachment() ) {  // 添付ファイルページ
+			$str .= '' . $post->post_title . '';
+		} elseif ( is_404() ) { // 404 Not Found ページ
+			$str .= '404 Not found';
+		} else { // その他
+			$str .= '<a href="' . get_permalink( $ancestor ) . '">' . get_the_title( $ancestor ) . '</a>';
+			$str .= '&nbsp;｜&nbsp;';
 		}
-	} else {
-		$stBCMain = '';
-		if ( is_archive() ) {
-			// アーカイブページ
-			$id = get_the_category();
-			$id = $id[0];
-			if ( 0 < $id->category_parent ) {
-				// カテゴリで親がある場合
-				$id                          = get_category( $id->category_parent );
-				list($stBCMain, $inNewLevel) = getCateBC( $id, $inLevel );
-			} else {
-				$inNewLevel = $inLevel;
-			};
-			$stBCCur = sprintf( $stListE, get_the_archive_title(), $inNewLevel );
-		} elseif ( is_search() ) {
-			$stBCCur = sprintf( $stListE, '検索: ' . get_search_query(), 2 );
-		} elseif ( is_404() ) {
-			$stBCCur = sprintf( $stListE, 'ページが見つかりません', 2 );
-		}
-		echo $stBCHead . $stBCMain . $stBCCur . $stBCFoot . "\n";
+		$str .= '';
+		$str .= '</div></div>';
 	}
+	echo $str;
 }

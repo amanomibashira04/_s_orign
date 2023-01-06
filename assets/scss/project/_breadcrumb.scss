@@ -5,31 +5,67 @@
 /*-------------------------------------------*/
 /* .breadcrumb
 /*-------------------------------------------*/
-.breadcrumb {
-	font-size: 12px;
+nav#breadcrumb {
+    margin-bottom: 38px;
+}
+nav#breadcrumb ul {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 25px;
+    position: relative;
+}
+nav#breadcrumb ul li {
+    position: relative;
+}
+nav#breadcrumb ul li span:before {
+    content: "\E5df";
+    font-family: 'Material Icons';
+    font-size: 1.5rem;
+    position: absolute;
+    top: -3px;
+    right: -25px;
+}
+nav#breadcrumb ul li a:hover {
+    opacity: 0.8;
+}
+nav#breadcrumb ul li a span {
+    color: #aaa;
+    font-size: 0.9rem;
+}
 
-	ul {
-		display: flex;
-		margin: 0;
-		padding: 0;
-	}
+span.breadHome {
+    position: relative;
+    padding-left: 25px;
+}
+nav#breadcrumb ul li span.breadHome:before {
+    content: "\E0c8";
+    font-family: 'Material Icons';
+    font-size: 1.4rem;
+    position: absolute;
+    top: -4px;
+    left: 0;
+}
+span.breadHome:after {
+    content: "\E5df";
+    font-family: 'Material Icons';
+    font-size: 1.5rem;
+    position: absolute;
+    top: -4px;
+    right: -25px;
+}
 
-	li {
-		display: inline-block;
-		margin: 0;
-		padding: 0;
-		list-style: none;
-
-		&:after {
-			content: '/';
-			margin-left: 0.5em;
-			margin-right: 0.5em;
-		}
-
-		&:last-child:after {
-			content: '';
-			margin-left: 0;
-			margin-right: 0;
-		}
-	}
+@media screen and (max-width: 767px) {
+/* ぱんクズ */
+    nav#breadcrumb {
+    margin-bottom: 12px;
+    }
+    nav#breadcrumb ul {
+    white-space: nowrap;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    padding-bottom: 15px;
+    padding-top: 3px;
+    padding-right: 4%;
+    }
 }

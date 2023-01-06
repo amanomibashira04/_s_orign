@@ -52,6 +52,7 @@ function _s_orign_setup() {
 	register_nav_menus(
 		array(
 			'menu-1' => esc_html__( 'Primary', '_s_orign_orign' ),
+			'menu-2' => esc_html__( 'secondary', '_s_orign_orign' ),
 		)
 	);
 
@@ -101,10 +102,10 @@ function _s_orign_setup() {
 			'flex-height' => true,
 		)
 	);
-		// Add support for full and wide align images(wpsk addition).
+		// フルおよびワイド アライン画像のサポートを追加
 		add_theme_support( 'align-wide' );
 
-		// Add support for responsive embeds(wpsk addition).
+		// レスポンシブ埋め込みのサポートを追加
 		add_theme_support( 'responsive-embeds' );
 }
 add_action( 'after_setup_theme', '_s_orign_setup' );
@@ -177,6 +178,16 @@ require get_template_directory() . '/inc/customizer.php';
  * パンくずリスト
  */
 require get_template_directory() . '/inc/breadcrumb.php';
+
+/**
+ * ショートコード
+ */
+require get_template_directory() . '/inc/short-code.php';
+
+/**
+ * カスタム投稿
+ */
+require get_template_directory() . '/inc/custom-post.php';
 
 /**
  * その他

@@ -1,7 +1,10 @@
 @use "../global" as *;
 
 
-.tabs-panel {
+/*====================================================================
+Javascript
+====================================================================*/
+.tabs-panel01 {
 	li {
 		margin: 0;
 	}
@@ -11,41 +14,95 @@
 		padding: 0;
 	}
 
-	.tabs-group {
+	.a-tabs-group {
 		display: flex;
 
-		.tab {
+		.a-tab {
 			padding: 5px;
 			list-style: none;
 			border: solid #CCC;
 			cursor: pointer;
 			border-width: 1px 1px 0 1px;
+			&.js-is-active {
+				background: #cccccc;
+				color: #FFF;
+				transition: all 0.2s ease-out;
+			}
 		}
-		.tab.is-active {
-			background: #cccccc;
+	}
+
+	.a-panel-group {
+		border: solid #CCC;
+		border-top: none;
+		background: #eee;
+		border-width: 1px 1px 0 1px;
+
+		.a-panel {
+			height: 0;
+			opacity: 0;
+			visibility: hidden;
+		}
+
+		.a-panel.js-is-show {
+			border: solid 1px #CCC;
+			border-width: 1px;
+			height: auto;
+			opacity: 1;
+			visibility: visible;
+		}
+	}
+}
+
+
+
+/*====================================================================
+jQuery
+====================================================================*/
+.tabs-panel02 {
+	li {
+		margin: 0;
+	}
+
+	ol,
+	ul {
+		padding: 0;
+	}
+
+	.b-tab-group {
+		display: flex;
+
+		.b-tab {
+			padding: 5px;
+			list-style: none;
+			border: solid #CCC;
+			cursor: pointer;
+			border-width: 1px 1px 0 1px;
+			&.jq-is-active {
+				background: #cccccc;
+				color: #FFF;
+				transition: all 0.2s ease-out;
+			}
+		}
+	}
+
+	.b-panel-group {
+		border: solid 1px #CCC;
+		border-top: none;
+		background: #eee;
+
+		.b-panel {
+			display: none;
+		}
+
+		.b-tab.jq-is-active {
+			background: #F00;
 			color: #FFF;
 			transition: all 0.2s ease-out;
 		}
+
+		.b-panel.jq-is-show {
+			display: block;
+		}
 	}
+
 }
-
-.panel-group {
-	border: solid #CCC;
-	border-top: none;
-	background: #eee;
-	border-width: 1px 1px 0 1px;
-
-	.panel {
-		height: 0;
-		opacity: 0;
-		visibility: hidden;
-	}
-	.panel.is-show {
-		border: solid 1px #CCC;
-		border-width: 1px;
-		height: auto;
-		opacity: 1;
-		visibility: visible;
-	}
-}
-

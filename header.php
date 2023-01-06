@@ -50,42 +50,40 @@ endif;
 						<?php
 						if ( is_front_page() && is_home() ) :
 							?>
-					<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>"
-							rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-						<?php else : ?>
-					<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>"
-							rel="home"><?php bloginfo( 'name' ); ?></a></p>
-						<?php endif; ?>
-						<?php } ?>
-						<?php
-						$underscores_orign_description = get_bloginfo( 'description', 'display' );
-						if ( $underscores_orign_description || is_customize_preview() ) :
-							?>
-					<p class="site-description">
+							<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>"
+									rel="home"><?php bloginfo( 'name' ); ?></a></h1>
 							<?php
-							echo $underscores_orign_description; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+						else :
 							?>
+							<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>"
+									rel="home"><?php bloginfo( 'name' ); ?></a></p>
+							<?php
+						endif;
+					}
+					?>
+					<?php
+						$underscores_orign_description = get_bloginfo( 'description', 'display' );
+					if ( $underscores_orign_description || is_customize_preview() ) :
+						?>
+					<p class="site-description">
+						<?php
+						echo $underscores_orign_description; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+						?>
 					</p>
-						<?php endif; ?>
+					<?php endif; ?>
 				</div>
 				<nav id="site-navigation" class="main-navigation">
 					<button class="menu-toggle" aria-controls="primary-menu"
 						aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'underscores_orign' ); ?>
 					</button>
 					<?php
-							wp_nav_menu(
-								array(
-									'theme_location' => 'menu-1',
-									'menu_id'        => 'primary-menu',
-								)
-							);
-							?>
+					wp_nav_menu(
+						array(
+							'theme_location' => 'menu-1',
+							'menu_id'        => 'primary-menu',
+						)
+					);
+					?>
 				</nav>
-				<!-- ヘッダー背景 -->
-				<?php
-				/**
-				get_template_part( 'inc/header-image' );
-				*/
-				?>
 			</div>
 		</header><!-- #masthead -->

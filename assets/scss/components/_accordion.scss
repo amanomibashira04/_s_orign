@@ -1,5 +1,9 @@
 @use "../global" as *;
 
+
+/*====================================================================
+Javascript
+====================================================================*/
 .sk-accordion {
 	p {
 		margin-bottom: 0;
@@ -30,5 +34,93 @@
 		opacity: 1;
 		visibility: visible;
 
+	}
+}
+
+
+
+/*====================================================================
+jQuery
+====================================================================*/
+.c-accordion {
+	&__body {
+		display: none;
+		border: #000000 solid 1px;
+		// padding: 10px 20px;
+		// border: 1px solid #000000;
+	}
+
+	&__title {
+		position: relative;
+		cursor: pointer;
+		margin-bottom: 0;
+		color: #000000;
+		border: #000000 solid 1px;
+
+		&:hover,
+		&:active,
+		&.is-open {
+			color: #fff;
+			background-color: #ccc;
+		}
+
+		&::before {
+			content: "";
+			position: absolute;
+			top: 50%;
+			right: 25px;
+			width: 10px;
+			height: 2px;
+			transform: rotate(90deg);
+			background: #000000;
+			transition: all .3s ease-in-out;
+		}
+
+		&:after {
+			content: "";
+			position: absolute;
+			top: 50%;
+			right: 25px;
+			/*横線*/
+			width: 10px;
+			height: 2px;
+			background: #000000;
+			transition: all .2s ease-in-out;
+		}
+
+		&.is-open::before {
+			transform: rotate(135deg);
+		}
+
+		&.is-open::after {
+			transform: rotate(45deg);
+		}
+	}
+}
+
+
+
+/*====================================================================
+HTML + CSS （チェックボックス）
+====================================================================*/
+.d-accordion {
+	.btn {
+		cursor: pointer;
+	}
+
+	p {
+		cursor: pointer;
+	}
+
+	#toggle.btn {
+		opacity: 0;
+	}
+
+	.childmenu {
+		display: none;
+	}
+
+	#toggle:checked+.childmenu {
+		display: block;
 	}
 }

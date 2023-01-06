@@ -1,4 +1,27 @@
-// @use "../global" as *;
+@use "../global" as *;
+
+/*====================================================================
+swiper
+====================================================================*/
+.swiper {
+	position: relative;
+	width: 800px;
+	height: 400px;
+	// margin-right: calc(50% - 50vw);
+	// margin-left: calc(50% - 50vw);
+
+	// img {
+	// 	position: absolute;
+	// 	top: 50%;
+	// 	left: 50%;
+	// 	transform: translate(-50%, -50%);
+	// 	width: auto;
+	// 	height: auto;
+	// 	min-width: 100%;
+	// 	min-height: 100%;
+	// 	max-width: inherit;
+	// }
+}
 
 
 
@@ -61,26 +84,33 @@
 // 		&::after,&::before{
 // 			content: none;
 // 		}
-// 		@media (min-width: $md-min) {
+// 		@include breakpoint(sp) {
+// 			font-size: 21px;
+// 		}
+// 		@include breakpoint(tab) {
 // 			font-size: 24px;
 // 		}
-// 		@media (min-width: $lg-min) {
+// 		@include breakpoint(pc-s) {
 // 			font-size: 28px;
 // 		}
-// 		@media (min-width: $xl-min) {
+// 		@include breakpoint(pc-l) {
 // 			font-size: 32px;
 // 		}
 // 	}
 // 	&-text-caption {
 // 		margin-bottom: 0;
 // 		font-size:12px;
-// 		@media (min-width: $sm-min) {
+// 		@include breakpoint(sp) {
+// 			font-size:1.250rem;
 // 		}
-// 		@media (min-width: $lg-min) {
+// 		@include breakpoint(tab) {
 // 			font-size:1.125rem;
 // 		}
-// 		@media (min-width: $xl-min) {
-// 			font-size:1.250rem;
+// 		@include breakpoint(pc-s) {
+// 			font-size:1.125rem;
+// 		}
+// 		@include breakpoint(pc-l) {
+// 			font-size:1.125rem;
 // 		}
 // 	}
 // 	&-text-title + &-text-caption {
@@ -88,7 +118,7 @@
 // 	}
 // 	.btn {
 // 		margin-top: 1em;
-// 		@media (max-width: $sm-max) {
+// 		@include breakpoint(sp) {
 // 			font-size:12px;
 // 		}
 // 	}
@@ -106,19 +136,19 @@
 // 		// font-size: 16px;
 // 		// margin-top: 1.5em;
 // 		padding: 0.5em 2.2em;
-// 		color: $--vk-color-text-body;
-// 		border: 1px solid $--vk-color-text-body;
-// 		@media (min-width: $md-min) {
+// 		color: $sk-color-text-body;
+// 		border: 1px solid $sk-color-text-body;
+// 		@include breakpoint(sp) {
 // 			// font-size: 18px;
 // 		}
 // 		&:hover{
-// 			border-color: $--vk-color-primary;
-// 			background-color: $--vk-color-primary;
+// 			border-color: $sk-color-primary;
+// 			background-color: $sk-color-primary;
 // 		}
 // 	}
 // 	.swiper-button-prev:after,
 // 	.swiper-button-next:after {
-// 		@media (max-width: $xs-max) {
+// 		@include breakpoint(pc-l) {
 // 			display: none;
 // 		}
 // 		font-size: 1.5em;

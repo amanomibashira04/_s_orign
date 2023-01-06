@@ -17,7 +17,7 @@
     "url": "https://github.com/Automattic/_s/issues"
   },
   "devDependencies": {
-    "@wordpress/scripts": "^19.2.2",
+    "@wordpress/scripts": "^25.1.0",
     "dir-archiver": "^1.1.1",
     "node-sass": "^7.0.1",
     "rtlcss": "^3.5.0"
@@ -45,6 +45,8 @@
   },
   "dependencies": {
     "@popperjs/core": "^2.11.6",
-    "bootstrap": "^5.2.3"
+    "bootstrap": "^5.2.3",
+    "jsonld": "^8.1.0",
+    "swiper": "^8.4.5"
   }
 }
