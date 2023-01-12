@@ -7,7 +7,7 @@
 
 
 /**===================================
-news（アーカイブあり）
+news（階層あり：hierarchical => true）
 ====================================== */
 function create_post_type() {
 
@@ -18,12 +18,17 @@ function create_post_type() {
 			'public'        => true,
 			'has_archive'   => true,
 			'show_in_rest'  => true,
+			'hierarchical'  => true,
 			'menu_position' => 5,
+			'show_in_rest' => true, 
 			'supports'      => array(
 				'title',
 				'editor',
+				'excerpt',
 				'thumbnail',
 				'revisions',
+				'custom-fields',
+				'page-attributes',
 			),
 		)
 	);
@@ -32,7 +37,7 @@ function create_post_type() {
 		'news-cat',
 		'news',
 		array(
-			'label'        => 'カテゴリー',
+			'label'        => 'カテゴリー：ニュース',
 			'hierarchical' => true,
 			'public'       => true,
 			'show_in_rest' => true,
@@ -43,7 +48,7 @@ function create_post_type() {
 		'news-tag',
 		'news',
 		array(
-			'label'                 => 'タグ',
+			'label'                 => 'タグ：ニュース',
 			'hierarchical'          => false,
 			'public'                => true,
 			'show_in_rest'          => true,

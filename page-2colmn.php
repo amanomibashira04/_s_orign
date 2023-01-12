@@ -21,7 +21,7 @@ get_header();
 		<?php
 		if ( is_front_page() ) :
 		else :
-			the_title( '<h1 class="page-title">', '</h1>' );
+			the_title( '<h1 class="site-body-title">', '</h1>' );
 		endif
 		?>
 	</div>

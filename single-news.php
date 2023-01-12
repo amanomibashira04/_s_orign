@@ -1,6 +1,6 @@
 <?php
 /**
- * The template for displaying single-news posts
+ * The template for displaying news post
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/#single-post
  *
@@ -13,11 +13,9 @@ get_header();
 	<div class="site-body-header-inner container">
 		<?php
 		if ( is_singular() ) :
-			the_title( '<h1 class="entry-title">', '</h1>' );
+			the_title( '<h1 class="site-body-title">', '</h1>' );
 		else :
-			the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
-		endif;
-		if ( 'post' === get_post_type() ) :
+			the_title( '<h2 class="site-body-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
 		endif;
 		?>
 	</div>
@@ -29,7 +27,7 @@ get_header();
 			<?php
 			while ( have_posts() ) :
 				the_post();
-				get_template_part( 'template-parts/content', get_post_type() );
+				get_template_part( 'template-parts/content' );
 				the_post_navigation(
 					array(
 						'prev_text' => '<span class="nav-subtitle">' . esc_html__( '前の記事へ：', '_s_orign_orign' ) . '</span> <span class="nav-title">%title</span>',

@@ -88,11 +88,6 @@ ol {
   padding-left: 1.5em;
 }
 
-li {
-  margin-top: 0.5em;
-  margin-bottom: 0.5em;
-}
-
 blockquote {
   margin: 0;
   padding: 1em 1.5em;
@@ -453,34 +448,17 @@ HTML + CSS （チェックボックス）
 
 .pagetop {
   cursor: pointer;
-  /* カーソルをリンクを示すポインター(指の形)にする  */
   position: fixed;
-  /* ｳｨﾝﾄﾞｳを基準に固定する  */
   bottom: 50px;
-  /* ｳｨﾝﾄﾞｳのフチからの距離  */
   right: 30px;
-  /* ｳｨﾝﾄﾞｳのフチからの距離  */
-  background-color: #192826;
-  /* 背景色  */
-  border-radius: 50%;
-  /* 円形にする  */
+  background-color: #000000;
+  color: #ffffff;
   width: 50px;
-  /* 幅  */
   height: 50px;
-  /* 高さ  */
   font-size: 20px;
-  /* ▲の大きさ */
   line-height: 50px;
-  /* ▲を中央に配置するために指定 */
   text-align: center;
-  /* ▲を中央に配置  */
 }
-
-.pagetop:hover {
-  opacity: 0.5;
-  /* 透明度の指定 */
-}
-
 /*-------------------------------------------*/
 /*	calendar
 /*-------------------------------------------*/
@@ -726,6 +704,16 @@ HTML + CSS （チェックボックス）
   display: none;
 }
 
+.page-content-attention,
+.entry-content-attention,
+.entry-summary-attention {
+  font-weight: bold;
+  padding: 20px;
+  margin-bottom: 2rem;
+  background-image: repeating-linear-gradient(45deg, #F7DD00, #F7DD00 10px, #d5d5d5 10px, #d5d5d5 20px);
+  border-radius: 0.5em;
+}
+
 .site-body-header {
   color: #fff;
   background-color: #3461ac;
@@ -744,7 +732,6 @@ HTML + CSS （チェックボックス）
 
 .page-title,
 .entry-title {
-  font-size: 3.2rem;
   font-weight: 700;
   line-height: 1.5em;
   margin: 0;
@@ -819,9 +806,19 @@ HTML + CSS （チェックボックス）
 swiper
 ====================================================================*/
 .swiper {
-  position: relative;
-  width: 800px;
-  height: 400px;
+  width: 100%;
+  height: 600px;
+}
+.swiper img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: auto;
+  height: auto;
+  min-width: 100%;
+  min-height: 100%;
+  max-width: inherit;
 }
 
 /*====================================================================
@@ -939,10 +936,6 @@ jQuery
 }
 .widget-title ul {
   margin-top: 0;
-}
-.widget li {
-  margin-top: 0.8em;
-  margin-top: 0.8em;
 }
 .widget:last-child() {
   margin-bottom: 0;
@@ -1228,6 +1221,25 @@ jQuery
   font-size: 1.2rem;
 }
 
+.widget-area .widget-title {
+  font-size: 2rem;
+  color: #fff;
+  background-color: #000;
+  padding: 0 1rem;
+  line-height: 2;
+  margin: 0;
+}
+.widget-area .wp-block-latest-posts__post-title {
+  display: inline-block;
+  width: 100%;
+  padding: 0.5em 1rem;
+  background-color: #FAFAFA;
+  border-bottom: 1px solid #dadada;
+}
+.widget-area .wp-block-latest-posts__post-title:hover {
+  background-color: #eee;
+}
+
 .widget select {
   max-width: 100%;
 }
@@ -1294,6 +1306,205 @@ jQuery
   width: 300px;
 }
 
+.wp-block-button__link {
+  cursor: pointer;
+  display: inline-block;
+  text-align: center;
+  word-break: break-word;
+  box-sizing: border-box;
+}
+
+.wp-block-button__link.aligncenter {
+  text-align: center;
+}
+
+.wp-block-button__link.alignright {
+  text-align: right;
+}
+
+:where(.wp-block-button__link) {
+  box-shadow: none;
+  text-decoration: none;
+  border-radius: 9999px;
+  padding: calc(0.667em + 2px) calc(1.333em + 2px);
+}
+
+.wp-block-button[style*=text-decoration] .wp-block-button__link {
+  text-decoration: inherit;
+}
+
+.wp-block-buttons > .wp-block-button.has-custom-width {
+  max-width: none;
+}
+
+.wp-block-buttons > .wp-block-button.has-custom-width .wp-block-button__link {
+  width: 100%;
+}
+
+.wp-block-buttons > .wp-block-button.has-custom-font-size .wp-block-button__link {
+  font-size: inherit;
+}
+
+.wp-block-buttons > .wp-block-button.wp-block-button__width-25 {
+  width: calc(25% - var(--wp--style--block-gap, 0.5em) * 0.75);
+}
+
+.wp-block-buttons > .wp-block-button.wp-block-button__width-50 {
+  width: calc(50% - var(--wp--style--block-gap, 0.5em) * 0.5);
+}
+
+.wp-block-buttons > .wp-block-button.wp-block-button__width-75 {
+  width: calc(75% - var(--wp--style--block-gap, 0.5em) * 0.25);
+}
+
+.wp-block-buttons > .wp-block-button.wp-block-button__width-100 {
+  width: 100%;
+  flex-basis: 100%;
+}
+
+.wp-block-buttons.is-vertical > .wp-block-button.wp-block-button__width-25 {
+  width: 25%;
+}
+
+.wp-block-buttons.is-vertical > .wp-block-button.wp-block-button__width-50 {
+  width: 50%;
+}
+
+.wp-block-buttons.is-vertical > .wp-block-button.wp-block-button__width-75 {
+  width: 75%;
+}
+
+.wp-block-button.is-style-squared,
+.wp-block-button__link.wp-block-button.is-style-squared {
+  border-radius: 0;
+}
+
+.wp-block-button.no-border-radius,
+.wp-block-button__link.no-border-radius {
+  border-radius: 0 !important;
+}
+
+.wp-block-button.is-style-outline > .wp-block-button__link,
+.wp-block-button .wp-block-button__link.is-style-outline {
+  border: 2px solid;
+  padding: 0.667em 1.333em;
+}
+
+.wp-block-button.is-style-outline > .wp-block-button__link:not(.has-text-color),
+.wp-block-button .wp-block-button__link.is-style-outline:not(.has-text-color) {
+  color: currentColor;
+}
+
+.wp-block-button.is-style-outline > .wp-block-button__link:not(.has-background),
+.wp-block-button .wp-block-button__link.is-style-outline:not(.has-background) {
+  background-color: transparent;
+  background-image: none;
+}
+
+.wp-block-buttons.is-vertical {
+  flex-direction: column;
+}
+
+.wp-block-buttons.is-vertical > .wp-block-button:last-child {
+  margin-bottom: 0;
+}
+
+.wp-block-buttons > .wp-block-button {
+  display: inline-block;
+  margin: 0;
+}
+
+.wp-block-buttons.is-content-justification-left {
+  justify-content: flex-start;
+}
+
+.wp-block-buttons.is-content-justification-left.is-vertical {
+  align-items: flex-start;
+}
+
+.wp-block-buttons.is-content-justification-center {
+  justify-content: center;
+}
+
+.wp-block-buttons.is-content-justification-center.is-vertical {
+  align-items: center;
+}
+
+.wp-block-buttons.is-content-justification-right {
+  justify-content: flex-end;
+}
+
+.wp-block-buttons.is-content-justification-right.is-vertical {
+  align-items: flex-end;
+}
+
+.wp-block-buttons.is-content-justification-space-between {
+  justify-content: space-between;
+}
+
+.wp-block-buttons.aligncenter {
+  text-align: center;
+}
+
+.wp-block-buttons:not(.is-content-justification-space-between, .is-content-justification-right, .is-content-justification-left, .is-content-justification-center) .wp-block-button.aligncenter {
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+}
+
+.wp-block-buttons[style*=text-decoration] .wp-block-button,
+.wp-block-buttons[style*=text-decoration] .wp-block-button__link {
+  text-decoration: inherit;
+}
+
+.wp-block-buttons.has-custom-font-size .wp-block-button__link {
+  font-size: inherit;
+}
+
+.wp-block-button.aligncenter,
+.wp-block-calendar {
+  text-align: center;
+}
+
+.card {
+  border-radius: 5px;
+}
+
+/*-------------------------------------------*/
+/*	Download Manager
+/*-------------------------------------------*/
+.wpdm-download-link {
+  margin-top: 5px;
+}
+
+.w3eden {
+  margin-bottom: 2rem;
+}
+.w3eden .media {
+  padding: 0;
+  border: none;
+}
+.w3eden .media > div {
+  width: auto;
+}
+.w3eden .media-body {
+  margin-right: 1em;
+  margin-bottom: 0.5em;
+  flex: unset;
+}
+.w3eden .package-title:after {
+  border: none;
+}
+
+@media (max-width: 575.98px) {
+  .w3eden .media {
+    display: block !important;
+  }
+  .w3eden .link-template-default.thumbnail .wpdm-download-link.btn {
+    display: block;
+    margin-top: 10px;
+  }
+}
 .site-header .container {
   display: flex;
   align-items: center;

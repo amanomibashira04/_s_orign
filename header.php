@@ -46,20 +46,26 @@ endif;
 			<div class="container">
 				<div class="site-branding">
 					<?php the_custom_logo(); ?>
-					<?php if ( ! has_custom_logo() ) { ?>
+					<?php
+					if ( ! has_custom_logo() ) :
+						?>
 						<?php
 						if ( is_front_page() && is_home() ) :
 							?>
 							<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>"
-									rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+							rel="home"><?php bloginfo( 'name' ); ?></a></h1>
 							<?php
 						else :
 							?>
 							<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>"
-									rel="home"><?php bloginfo( 'name' ); ?></a></p>
+							rel="home"><?php bloginfo( 'name' ); ?></a></p>
 							<?php
 						endif;
-					}
+					else :
+
+
+
+					endif;
 					?>
 					<?php
 						$underscores_orign_description = get_bloginfo( 'description', 'display' );
@@ -86,4 +92,14 @@ endif;
 					?>
 				</nav>
 			</div>
+			<?php
+			if ( is_front_page() ) :
+				?>
+				<div class="site-hero">
+					<?php get_template_part( 'template-parts/header', 'hiro' ); ?>
+				</div>
+				<?php
+			else :
+			endif;
+			?>
 		</header><!-- #masthead -->

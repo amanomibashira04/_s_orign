@@ -11,7 +11,7 @@ get_header();
 ?>
 <div class="site-body-header">
 	<div class="site-body-header-inner container">
-		<h1 class="entry-title"><?php esc_html_e( 'ページが見つかりません', '_s_orign_orign' ); ?></h1>
+		<h1 class="site-body-title"><?php esc_html_e( 'ページが見つかりません', '_s_orign_orign' ); ?></h1>
 	</div>
 </div><!-- .site-body-header -->
 <?php breadcrumb(); ?>

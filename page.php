@@ -19,7 +19,7 @@ get_header();
 		<div class="site-body-header-inner container">
 			<?php if ( is_front_page() ) : ?>
 			<?php else : ?>
-				<?php the_title( '<h1 class="page-title">', '</h1>' ); ?>
+				<?php the_title( '<h1 class="site-body-title">', '</h1>' ); ?>
 			<?php endif ?>
 		</div>
 	</div><!-- .site-body-header -->

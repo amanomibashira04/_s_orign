@@ -46,7 +46,7 @@ function _s_orign_setup() {
 		*/
 	add_theme_support( 'post-thumbnails' );
 	// サムネイルのサイズ
-	// set_post_thumbnail_size(200, 200 );
+	set_post_thumbnail_size( 200, 200 );
 
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus(

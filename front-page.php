@@ -20,15 +20,13 @@ get_header();
 			<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 				<header class="entry-header">
 				</header><!-- .entry-header -->
-				<?php _s_orign_post_thumbnail(); ?>
 				<div class="entry-content">
-					<h2>swiper</h2>
-				<?php get_template_part( 'template-parts/header-hiro' ); ?>
 				</div><!-- .entry-content -->
 				<div class="entry-meta">
 					<footer class="entry-footer">
 						<?php _s_orign_entry_footer(); ?>
 					</footer><!-- .entry-footer -->
+			</article>
 		</main><!-- #main -->
 	</div>
 </div>

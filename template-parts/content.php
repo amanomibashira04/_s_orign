@@ -11,8 +11,38 @@
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<header class="entry-header">
+		<?php
+		if ( is_singular() ) :
+			the_title( '<h2 class="entry-title">', '</h2>' );
+		else :
+			the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
+		endif; ?>
 	</header><!-- .entry-header -->
+	<?php
+	if ( 'post' === get_post_type() ) :
+		?>
+		<div class="entry-meta">
+			<?php
+			_s_orign_posted_on();
+			_s_orign_posted_by();
+			?>
+		</div><!-- .entry-meta -->
+		<?php
+	endif; ?>
+		<?php
+	if ( 'news' === get_post_type() ) :
+		?>
+		<div class="entry-meta">
+			<?php
+			_s_orign_posted_on();
+			_s_orign_posted_by();
+			?>
+		</div><!-- .entry-meta -->
+		<?php
+	endif; ?>
+
 	<?php _s_orign_post_thumbnail(); ?>
+
 	<div class="entry-content">
 		<?php
 		the_content(
@@ -29,6 +59,7 @@
 				wp_kses_post( get_the_title() )
 			)
 		);
+
 		wp_link_pages(
 			array(
 				'before' => '<div class="page-links">' . esc_html__( 'Pages:', '_s_orign_orign' ),
@@ -37,12 +68,7 @@
 		);
 		?>
 	</div><!-- .entry-content -->
-	<div class="entry-meta">
-			<?php
-				_s_orign_posted_on();
-				_s_orign_posted_by();
-			?>
-		</div><!-- .entry-meta -->
+
 	<footer class="entry-footer">
 		<?php _s_orign_entry_footer(); ?>
 	</footer><!-- .entry-footer -->

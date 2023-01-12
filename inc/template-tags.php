@@ -27,7 +27,7 @@ if ( ! function_exists( '_s_orign_posted_on' ) ) :
 
 		$posted_on = sprintf(
 			/* translators: %s: post date. */
-			esc_html_x( 'Posted on %s', 'post date', '_s_orign_orign' ),
+			esc_html_x( '投稿日： %s', 'post date', '_s_orign_orign' ),
 			'<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>'
 		);
 
@@ -43,7 +43,7 @@ if ( ! function_exists( '_s_orign_posted_by' ) ) :
 	function _s_orign_posted_by() {
 		$byline = sprintf(
 			/* translators: %s: post author. */
-			esc_html_x( 'by %s', 'post author', '_s_orign_orign' ),
+			esc_html_x( '投稿者 %s', 'post author', '_s_orign_orign' ),
 			'<span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a></span>'
 		);
 
@@ -63,14 +63,31 @@ if ( ! function_exists( '_s_orign_entry_footer' ) ) :
 			$categories_list = get_the_category_list( esc_html__( ', ', '_s_orign_orign' ) );
 			if ( $categories_list ) {
 				/* translators: 1: list of categories. */
-				printf( '<span class="cat-links">' . esc_html__( 'Posted in %1$s', '_s_orign_orign' ) . '</span>', $categories_list ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+				printf( '<span class="cat-links">' . esc_html__( 'カテゴリー： %1$s', '_s_orign_orign' ) . '</span>', $categories_list ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 			}
 
 			/* translators: used between list items, there is a space after the comma */
 			$tags_list = get_the_tag_list( '', esc_html_x( ', ', 'list item separator', '_s_orign_orign' ) );
 			if ( $tags_list ) {
 				/* translators: 1: list of tags. */
-				printf( '<span class="tags-links">' . esc_html__( 'Tagged %1$s', '_s_orign_orign' ) . '</span>', $tags_list ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+				printf( '<span class="tags-links">' . esc_html__( 'タグ %1$s', '_s_orign_orign' ) . '</span>', $tags_list ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+			}
+		}
+
+		// Hide category and tag text for pages.
+		if ( 'news' === get_post_type() ) {
+			/* translators: used between list items, there is a space after the comma */
+			$categories_news_list = the_terms( get_the_ID(), 'news-cat', 'カテゴリー: ', ', ' );
+			if ( $categories_news_list ) {
+				/* translators: 1: list of categories. */
+				printf( '<span class="cat-links">' . esc_html__( 'カテゴリー： %1$s', '_s_orign_orign' ) . '</span>', $categories_news_list ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+			}
+
+			/* translators: used between list items, there is a space after the comma */
+			$tags_news_list = the_terms( get_the_ID(), 'news-tag', 'タグ: ', ', ' );
+			if ( $tags_news_list ) {
+				/* translators: 1: list of tags. */
+				printf( '<span class="tags-links">' . esc_html__( 'Tagged %1$s', '_s_orign_orign' ) . '</span>', $tags_news_list ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 			}
 		}
 
@@ -127,14 +144,14 @@ if ( ! function_exists( '_s_orign_post_thumbnail' ) ) :
 		if ( is_singular() ) :
 			?>
 
-			<div class="post-thumbnail">
-				<?php the_post_thumbnail(); ?>
-			</div><!-- .post-thumbnail -->
+<div class="post-thumbnail">
+			<?php the_post_thumbnail(); ?>
+</div><!-- .post-thumbnail -->
 
-		<?php else : ?>
+<?php else : ?>
 
-			<a class="post-thumbnail" href="<?php the_permalink(); ?>" aria-hidden="true" tabindex="-1">
-				<?php
+<a class="post-thumbnail" href="<?php the_permalink(); ?>" aria-hidden="true" tabindex="-1">
+	<?php
 					the_post_thumbnail(
 						'post-thumbnail',
 						array(
@@ -145,10 +162,10 @@ if ( ! function_exists( '_s_orign_post_thumbnail' ) ) :
 							),
 						)
 					);
-				?>
-			</a>
+	?>
+</a>
 
-			<?php
+	<?php
 		endif; // End is_singular().
 	}
 endif;

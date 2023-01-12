@@ -1,29 +1,15 @@
 .pagetop {
 	cursor: pointer;
-	/* カーソルをリンクを示すポインター(指の形)にする  */
 	position: fixed; 
-	/* ｳｨﾝﾄﾞｳを基準に固定する  */
 	bottom: 50px; 
-	/* ｳｨﾝﾄﾞｳのフチからの距離  */
 	right: 30px; 
-	/* ｳｨﾝﾄﾞｳのフチからの距離  */
-	background-color: #192826; 
-	/* 背景色  */
-	border-radius: 50%; 
-	/* 円形にする  */
+	background-color: #000000; 
+	color: #ffffff; 
 	width: 50px; 
-	/* 幅  */
 	height: 50px; 
-	/* 高さ  */
 	font-size: 20px; 
-	/* ▲の大きさ */
 	line-height: 50px; 
-	/* ▲を中央に配置するために指定 */
 	text-align: center; 
-	/* ▲を中央に配置  */
-}
-
-.pagetop:hover {
-	opacity: 0.5; 
-	/* 透明度の指定 */
+	:hover {
+	}
 }
