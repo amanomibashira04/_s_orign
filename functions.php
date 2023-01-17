@@ -46,7 +46,7 @@ function _s_orign_setup() {
 		*/
 	add_theme_support( 'post-thumbnails' );
 	// サムネイルのサイズ
-	set_post_thumbnail_size( 200, 200 );
+	// set_post_thumbnail_size( 200, 200 );
 
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus(
@@ -102,11 +102,12 @@ function _s_orign_setup() {
 			'flex-height' => true,
 		)
 	);
-		// フルおよびワイド アライン画像のサポートを追加
-		add_theme_support( 'align-wide' );
 
-		// レスポンシブ埋め込みのサポートを追加
-		add_theme_support( 'responsive-embeds' );
+	// フルおよびワイド アライン画像のサポートを追加
+	add_theme_support( 'align-wide' );
+
+	// レスポンシブ埋め込みのサポートを追加
+	add_theme_support( 'responsive-embeds' );
 }
 add_action( 'after_setup_theme', '_s_orign_setup' );
 
@@ -193,3 +194,18 @@ require get_template_directory() . '/inc/custom-post.php';
  * その他
  */
 require get_template_directory() . '/inc/other.php';
+
+/**
+ * ブロックパターン
+ */
+require get_template_directory() . '/inc/block_pattern.php';
+
+/**
+ * ブロックエディタ
+ */
+require get_template_directory() . '/inc/block-editor.php';
+
+/**
+ * ブロックパターン
+ */
+require get_template_directory() . '/inc/block-style.php';

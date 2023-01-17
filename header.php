@@ -45,11 +45,8 @@ endif;
 			<!-- ヘッダーメニュー -->
 			<div class="container">
 				<div class="site-branding">
-					<?php the_custom_logo(); ?>
 					<?php
 					if ( ! has_custom_logo() ) :
-						?>
-						<?php
 						if ( is_front_page() && is_home() ) :
 							?>
 							<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>"
@@ -62,9 +59,13 @@ endif;
 							<?php
 						endif;
 					else :
-
-
-
+						if ( is_front_page() || is_home() ) :
+							$custom_logo_id = get_theme_mod( 'custom_logo' );
+							$logo           = wp_get_attachment_image_src( $custom_logo_id, 'full' );
+							echo '<h1><img src="' . esc_url( $logo[0] ) . '" alt="' . get_bloginfo( 'name' ) . '"></h1>';
+						else :
+							the_custom_logo();
+						endif;
 					endif;
 					?>
 					<?php

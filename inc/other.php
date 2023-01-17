@@ -119,3 +119,23 @@ function recaptcha_limitation() {
 	}
 }
 add_action( 'wp_enqueue_scripts', 'recaptcha_limitation', 100 );
+
+// 抜粋の続きを読む
+function _s_orign_orign_excerpt_more( $post ) {
+	return ' <a href="' . esc_url( get_permalink() ) . '">' . '[...]' . '続きを読む' . '</a>';
+}
+add_filter( 'excerpt_more', '_s_orign_orign_excerpt_more' );
+
+// 投稿記事でタイトルがない場合
+function _s_orign_orign_replace_post_title( $title ) {
+	global $post;
+	// post_typeを判定(post, page, カスタム投稿)
+	if ( $post->post_type == 'post' ) {
+		if ( $title === '' ) {
+					$title = 'no-title';
+		}
+	}
+	return $title;
+}
+add_filter( 'title_save_pre', '_s_orign_orign_replace_post_title' );
+

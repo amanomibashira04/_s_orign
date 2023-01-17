@@ -13,59 +13,64 @@
 	<header class="entry-header">
 		<?php
 		if ( is_singular() ) :
+			/**
 			the_title( '<h2 class="entry-title">', '</h2>' );
+			*/
 		else :
 			the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
-		endif; ?>
+		endif;
+		?>
 	</header><!-- .entry-header -->
 	<?php
 	if ( 'post' === get_post_type() ) :
 		?>
-		<div class="entry-meta">
-			<?php
+	<div class="entry-meta">
+		<?php
 			_s_orign_posted_on();
 			_s_orign_posted_by();
-			?>
-		</div><!-- .entry-meta -->
-		<?php
-	endif; ?>
-		<?php
-	if ( 'news' === get_post_type() ) :
 		?>
-		<div class="entry-meta">
-			<?php
-			_s_orign_posted_on();
-			_s_orign_posted_by();
-			?>
-		</div><!-- .entry-meta -->
+	</div><!-- .entry-meta -->
 		<?php
-	endif; ?>
+	endif;
+	?>
 
 	<?php _s_orign_post_thumbnail(); ?>
+	<?php
+	if ( 'news' === get_post_type() ) :
+		?>
+	<div class="entry-meta">
+		<?php
+			_s_orign_posted_on();
+			_s_orign_posted_by();
+		?>
+	</div><!-- .entry-meta -->
+		<?php
+	endif;
+	?>
 
 	<div class="entry-content">
 		<?php
-		the_content(
-			sprintf(
-				wp_kses(
+			the_content(
+				sprintf(
+					wp_kses(
 					/* translators: %s: Name of current post. Only visible to screen readers */
-					__( 'Continue reading<span class="screen-reader-text"> "%s"</span>', '_s_orign_orign' ),
-					array(
-						'span' => array(
-							'class' => array(),
-						),
-					)
-				),
-				wp_kses_post( get_the_title() )
-			)
-		);
-
+						__( 'Continue reading<span class="screen-reader-text"> "%s"</span>', '_s_orign_orign' ),
+						array(
+							'span' => array(
+								'class' => array(),
+							),
+						)
+					),
+					wp_kses_post( get_the_title() )
+				)
+			);
 		wp_link_pages(
 			array(
 				'before' => '<div class="page-links">' . esc_html__( 'Pages:', '_s_orign_orign' ),
 				'after'  => '</div>',
 			)
 		);
+
 		?>
 	</div><!-- .entry-content -->
 

@@ -7,24 +7,29 @@
 // 	margin: 0 0 1.5em 3em;
 // }
 
-// ul {
-// 	list-style: disc;
-// }
+ul {
+	list-style: disc;
+}
 
-// ol {
-// 	list-style: decimal;
-// }
+ol {
+	list-style: decimal;
+}
 
-// li > ul,
-// li > ol {
+// li>ul,
+// li>ol {
 // 	margin-bottom: 0;
 // 	margin-left: 1.5em;
 // }
 
-// dt {
-// 	font-weight: 700;
-// }
+dl {}
 
-// dd {
-// 	margin: 0 1.5em 1.5em;
-// }
+dt {
+	font-weight: bold;
+	float: left;
+	clear: left;
+	margin-right: 0.5em;
+}
+
+dd {
+	margin-left: 1em;
+}

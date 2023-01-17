@@ -1,0 +1,27 @@
+@use "../global" as *;
+
+pre {
+	background: $color__background-pre;
+	font-family: $font__pre;
+	line-height: $font__line-height-pre;
+	// margin-bottom: 1.6em;
+	overflow: auto;
+	padding: 1.6em;
+	font-family: $font__code;
+}
+
+code {
+		font-family: $font__code;
+	// padding: 0.2em 0.3em;
+	// /* 内側の余白 */
+	// margin: 0 0.2em;
+	// /* 外側の余白 */
+	// border-radius: 5px;
+	// /* 角の丸み */
+	// background: #f1f2f3;
+	// /* 背景色 */
+	// color: #404040;
+	// /* 文字色 */
+	// font-size: 0.9em;
+	// /* 文字サイズ */
+}

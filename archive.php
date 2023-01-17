@@ -28,8 +28,8 @@ get_header();
 			<?php if ( have_posts() ) : ?>
 				<header class="page-header">
 				</header><!-- .page-header -->
+				<!-- Start the Loop -->
 				<?php
-				/* Start the Loop */
 				while ( have_posts() ) :
 					the_post();
 					/*

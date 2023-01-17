@@ -1,7 +1,10 @@
 @use "../global" as *;
 
 
-
+.site-footer {
+	background-color: black;
+	color: #fff;
+}
 // .site-footer {
 //     $sk-size-text-sm : 12px; /* 変数指定しないとナビゲーションウィジェットなどの文字サイズが上書きできない */
 //     display:block; overflow:hidden;

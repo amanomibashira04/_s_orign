@@ -47,6 +47,7 @@
     "@popperjs/core": "^2.11.6",
     "bootstrap": "^5.2.3",
     "jsonld": "^8.1.0",
+    "ress": "^5.0.2",
     "swiper": "^8.4.5"
   }
 }

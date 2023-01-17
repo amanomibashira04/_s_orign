@@ -17,10 +17,12 @@ get_header();
 ?>
 	<div class="site-body-header">
 		<div class="site-body-header-inner container">
-			<?php if ( is_front_page() ) : ?>
-			<?php else : ?>
-				<?php the_title( '<h1 class="site-body-title">', '</h1>' ); ?>
-			<?php endif ?>
+			<?php
+			if ( is_front_page() ) :
+			else :
+				the_title( '<h1 class="site-body-title">', '</h1>' );
+			endif
+			?>
 		</div>
 	</div><!-- .site-body-header -->
 	<?php breadcrumb(); ?>
@@ -30,7 +32,7 @@ get_header();
 				<?php
 				while ( have_posts() ) :
 					the_post();
-					get_template_part( 'template-parts/content', 'page' );
+					get_template_part( 'template-parts/content', get_post_type() );
 					// If comments are open or we have at least one comment, load up the comment template.
 					if ( comments_open() || get_comments_number() ) :
 						comments_template();

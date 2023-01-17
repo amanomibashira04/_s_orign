@@ -1,0 +1,8 @@
+@use "../global" as *;
+
+blockquote {
+	margin: 0;
+	padding: 1em 1.5em;
+	border-left: 4px solid $sk-color-primary;
+	background-color: $sk-color-accent-bg;
+}

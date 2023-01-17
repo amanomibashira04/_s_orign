@@ -12,28 +12,29 @@ add_action(
 		// ブロックエディタ用スタイル機能をテーマに追加
 		add_theme_support( 'editor-styles' );
 		// ブロックエディタ用CSSの読み込み
-		add_editor_style( '/common/css/editor-style.css' );
+		add_editor_style( 'https://unpkg.com/ress/dist/ress.min.css' );
+		add_editor_style( 'editor.css' );
 	}
 );
 
 
-// 管理画面：ブロックエディタ用CSSの追加
-add_action(
-	'admin_enqueue_scripts',
-	function ( $hook_suffix ) {
-		// 新規・編集投稿ページのみ読み込み
-		if ( 'post.php' === $hook_suffix || 'post-new.php' === $hook_suffix ) {
-			// CSSディレクトリの設定
-			$uri = get_template_directory_uri() . '/common/css/editor-style.css';
-			// CSSファイルの読み込み
-			wp_enqueue_style( 'smart-style', $uri, array(), wp_get_theme()->get( 'Version' ) );
-			// JSディレクトリ
-			$uri = get_template_directory_uri() . '/common/js/editor-style.js';
-			// JSァイルの読み込み
-			wp_enqueue_script( 'smart-script', $uri, array(), wp_get_theme()->get( 'Version' ), true );
-		}
-	}
-);
+// 管理画面：ブロックエディタ用CSS・JSの追加
+// add_action(
+// 'admin_enqueue_scripts',
+// function ( $hook_suffix ) {
+// 新規・編集投稿ページのみ読み込み
+// if ( 'post.php' === $hook_suffix || 'post-new.php' === $hook_suffix ) {
+// CSSディレクトリの設定
+// $uri = get_template_directory_uri() . 'editor.css';
+// CSSファイルの読み込み
+// wp_enqueue_style( 'smart-style', $uri, array(), wp_get_theme()->get( 'Version' ) );
+// JSディレクトリ
+// $uri = get_template_directory_uri() . '/common/js/editor-style.js';
+// JSァイルの読み込み
+// wp_enqueue_script( 'smart-script', $uri, array(), wp_get_theme()->get( 'Version' ), true );
+// }
+// }
+// );
 
 /*
 ========================================================
@@ -60,16 +61,16 @@ add_action(
 ========================================================
 投稿タイプによってstyleシートを分ける場合
 =========================================================*/
-function add_block_editor_styles() {
-	global $pagenow;
-	if ( is_admin() && $pagenow == 'post.php' || $pagenow == 'post-new.php' ) { // 投稿画面かどうか判定する
-		$posttype = get_post_type(); // 投稿タイプを取得
+// function add_block_editor_styles() {
+// global $pagenow;
+// if ( is_admin() && $pagenow == 'post.php' || $pagenow == 'post-new.php' ) { // 投稿画面かどうか判定する
+// $posttype = get_post_type(); // 投稿タイプを取得
 
-		if ( $posttype == 'post' ) { // 通常の投稿ページなら以下のスタイルシートを読み込む
-			wp_enqueue_style( 'block-style', get_stylesheet_directory_uri() . '/block-style/block_style.css' );
-		} elseif ( $posttype == 'news' ) { // カスタム投稿名「news」なら以下のスタイルシートを読み込む
-			wp_enqueue_style( 'news-block-style', get_stylesheet_directory_uri() . '/block-style/news-block_style.css' );
-		}
-	}
-}
-add_action( 'enqueue_block_editor_assets', 'add_block_editor_styles' );
+// if ( $posttype == 'post' ) { // 通常の投稿ページなら以下のスタイルシートを読み込む
+// wp_enqueue_style( 'block-style', get_stylesheet_directory_uri() . '/block-style/block_style.css' );
+// } elseif ( $posttype == 'news' ) { // カスタム投稿名「news」なら以下のスタイルシートを読み込む
+// wp_enqueue_style( 'news-block-style', get_stylesheet_directory_uri() . '/block-style/news-block_style.css' );
+// }
+// }
+// }
+// add_action( 'enqueue_block_editor_assets', 'add_block_editor_styles' );

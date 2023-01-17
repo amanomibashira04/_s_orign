@@ -15,8 +15,10 @@
 }
 
 .alignfull {
+	border:0;
 	margin-right: calc(50% - 50vw);
 	margin-left: calc(50% - 50vw);
+	max-width: none; width: 100vw;
 }
 
 h2.has-background {
