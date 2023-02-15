@@ -14,20 +14,20 @@
 
 get_header();
 ?>
-<div class="site-body-header">
-	<div class="site-body-header-inner container">
+<div class="page-header">
+	<div class="container">
 		<?php
 		if ( have_posts() ) :
 			if ( is_home() && ! is_front_page() ) :
 				?>
-					<h1 class="site-body-title"><?php single_post_title(); ?></h1>
+					<h1 class="page-header-title"><?php single_post_title(); ?></h1>
 				<?php
 			endif;
 			?>
 	</div>
 </div>
 <div class="site-body">
-	<div class="site-body-container container">
+	<div class="container">
 		<main id="primary" class="site-main">
 			<?php
 			/* Start the Loop */

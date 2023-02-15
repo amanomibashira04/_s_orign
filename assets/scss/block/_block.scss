@@ -1,4 +1,4 @@
-@use "../global" as *;
+@use "../abstracts" as *;
 
 h2 {
 	font-size: 1.625rem;
@@ -38,7 +38,7 @@ p {
 h1 {
 	margin-bottom: 2em;
 	color: #fff;
-	background-color: $sk-color-primary;
+	background-color: $color__background-screen;
 	margin-top: 0;
 	padding-bottom: 0;
 	display: flex;
@@ -51,15 +51,14 @@ h2 {
 }
 
 h3 {
-	border-bottom: 1px solid $sk-color-border-hr;
+	border-bottom: 1px solid $color__background-hr;
 	background: 0 0;
 	padding: 0 0 .5em;
 }
 
 h4 {
 	padding: .5em;
-	background-color: $sk-color-border-hr;
-	border-radius: $sk-size-radius;
+	background-color: $color__background-hr;
 }
 
 h2,

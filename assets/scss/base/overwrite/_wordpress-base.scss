@@ -1,0 +1,19 @@
+@use "../../abstracts" as *;
+
+.alignfull {
+	margin-left: calc(-50vw + 50%);
+	margin-right: calc(-50vw + 50%);
+}
+
+.wp-block-pullquote {
+    font-size: 1.6rem;
+    line-height: 1.6;
+}
+
+.wp-block-pullquote {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    overflow-wrap: break-word;
+    box-sizing: border-box;
+}

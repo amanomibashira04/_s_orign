@@ -10,18 +10,18 @@
 get_header();
 ?>
 <div class="site-body-header">
-	<div class="site-body-header-inner container">
+	<div class="container">
 		<h1 class="site-body-title"><?php esc_html_e( 'ページが見つかりません', '_s_orign_orign' ); ?></h1>
 	</div>
 </div><!-- .site-body-header -->
 <?php breadcrumb(); ?>
 <div class="site-body">
-	<div class="site-body-container container">
+	<div class="container">
 		<main id="primary" class="site-main">
 			<section class="error-404 not-found">
-				<header class="page-header">
-				</header><!-- .page-header -->
-				<div class="page-content">
+				<header class="main-page-header">
+				</header><!-- .main-page-header -->
+				<div class="main-page-content">
 					<p><?php esc_html_e( 'It looks like nothing was found at this location. Maybe try one of the links below or a search?', '_s_orign_orign' ); ?></p>
 						<?php
 						get_search_form();

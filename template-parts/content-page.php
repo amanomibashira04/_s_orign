@@ -10,10 +10,10 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<header class="page-header">
+	<header class="main-page-header">
 	</header><!-- .page-header -->
 	<?php _s_orign_post_thumbnail(); ?>
-	<div class="page-content">
+	<div class="main-page-content">
 		<?php
 		the_content();
 		wp_link_pages(
@@ -25,7 +25,7 @@
 		?>
 	</div><!-- .page-content -->
 	<?php if ( get_edit_post_link() ) : ?>
-	<footer class="page-footer">
+	<footer class="main-page-footer">
 		<?php
 			edit_post_link(
 				sprintf(

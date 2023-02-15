@@ -9,20 +9,20 @@
 
 get_header();
 ?>
-<div class="site-body-header">
-	<div class="site-body-header-inner container">
+<div class="page-header">
+	<div class="container">
 		<?php
 		if ( is_singular() ) :
-			the_title( '<h1 class="site-body-title">', '</h1>' );
+			the_title( '<h1 class="page-header-title">', '</h1>' );
 		else :
-			the_title( '<h2 class="site-body-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
+			the_title( '<h2 class="page-header-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
 		endif;
 		?>
 	</div>
 </div><!-- .site-body-header -->
 <?php breadcrumb(); ?>
 <div class="site-body">
-	<div class="site-body-container container">
+	<div class="container">
 		<main id="primary" class="site-main">
 			<?php
 			while ( have_posts() ) :

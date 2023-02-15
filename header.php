@@ -49,12 +49,12 @@ endif;
 					if ( ! has_custom_logo() ) :
 						if ( is_front_page() && is_home() ) :
 							?>
-							<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>"
+					<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>"
 							rel="home"><?php bloginfo( 'name' ); ?></a></h1>
 							<?php
 						else :
 							?>
-							<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>"
+					<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>"
 							rel="home"><?php bloginfo( 'name' ); ?></a></p>
 							<?php
 						endif;
@@ -62,7 +62,7 @@ endif;
 						if ( is_front_page() || is_home() ) :
 							$custom_logo_id = get_theme_mod( 'custom_logo' );
 							$logo           = wp_get_attachment_image_src( $custom_logo_id, 'full' );
-							echo '<h1><img src="' . esc_url( $logo[0] ) . '" alt="' . get_bloginfo( 'name' ) . '"></h1>';
+							echo '<h1 class="site-logo"><img src="' . esc_url( $logo[0] ) . '" alt="' . get_bloginfo( 'name' ) . '"></h1>';
 						else :
 							the_custom_logo();
 						endif;
@@ -80,8 +80,8 @@ endif;
 					<?php endif; ?>
 				</div>
 				<nav id="site-navigation" class="main-navigation">
-					<button class="menu-toggle" aria-controls="primary-menu"
-						aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'underscores_orign' ); ?>
+					<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false">
+						<?php esc_html_e( 'Primary Menu', 'underscores_orign' ); ?>
 					</button>
 					<?php
 					wp_nav_menu(
@@ -93,14 +93,4 @@ endif;
 					?>
 				</nav>
 			</div>
-			<?php
-			if ( is_front_page() ) :
-				?>
-				<div class="site-hero">
-					<?php get_template_part( 'template-parts/header', 'hiro' ); ?>
-				</div>
-				<?php
-			else :
-			endif;
-			?>
 		</header><!-- #masthead -->

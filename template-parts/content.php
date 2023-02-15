@@ -10,21 +10,12 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<header class="entry-header">
-		<?php
-		if ( is_singular() ) :
-			/**
-			the_title( '<h2 class="entry-title">', '</h2>' );
-			*/
-		else :
-			the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
-		endif;
-		?>
+	<header class="main-entry-header">
 	</header><!-- .entry-header -->
 	<?php
 	if ( 'post' === get_post_type() ) :
 		?>
-	<div class="entry-meta">
+	<div class="main-entry-meta">
 		<?php
 			_s_orign_posted_on();
 			_s_orign_posted_by();
@@ -38,7 +29,7 @@
 	<?php
 	if ( 'news' === get_post_type() ) :
 		?>
-	<div class="entry-meta">
+	<div class="main-entry-meta">
 		<?php
 			_s_orign_posted_on();
 			_s_orign_posted_by();
@@ -64,14 +55,14 @@
 					wp_kses_post( get_the_title() )
 				)
 			);
-		wp_link_pages(
-			array(
-				'before' => '<div class="page-links">' . esc_html__( 'Pages:', '_s_orign_orign' ),
-				'after'  => '</div>',
-			)
-		);
+			wp_link_pages(
+				array(
+					'before' => '<div class="page-links">' . esc_html__( 'Pages:', '_s_orign_orign' ),
+					'after'  => '</div>',
+				)
+			);
 
-		?>
+			?>
 	</div><!-- .entry-content -->
 
 	<footer class="entry-footer">

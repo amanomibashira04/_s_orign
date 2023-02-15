@@ -1,0 +1,53 @@
+@use "../abstracts" as *;
+
+.site {
+	display: flex;
+	flex-direction: column;
+	&-body {
+		flex: 1;
+	}
+}
+
+.container {
+	padding-left: 15px;
+	padding-right: 15px;
+	margin-left: auto;
+	margin-right: auto;
+
+	@include mq(xxl) {
+		max-width: 1320px;
+	}
+
+	@include mq(xl) {
+		max-width: 1140px;
+	}
+
+	@include mq(lg) {
+		max-width: 960px;
+	}
+
+	@include mq(md) {
+		max-width: 720px;
+		.widget-area {
+			display: none;
+		}
+	}
+
+	@include mq(sm) {
+		max-width: 540px;
+	}
+}
+
+.site-body {
+	.container {
+		display: flex;
+		gap: 30px;
+
+		.site-main {
+			flex: 1;
+		}
+		.widget-area {
+			width: 300px;
+		}
+	}
+}

@@ -1,0 +1,6 @@
+@use "../../abstracts" as *;
+
+body {
+	background: $color__background-body; // Fallback for when there is no custom background color defined.
+	margin: 0;
+}

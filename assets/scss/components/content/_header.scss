@@ -1,0 +1,14 @@
+@use "../../abstracts" as *;
+
+.site-header {
+
+	a {
+		text-decoration: none;
+	}
+}
+
+.site-logo {
+		display: block;
+		margin: 0;
+		padding: 0;
+}

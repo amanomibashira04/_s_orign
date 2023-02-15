@@ -9,22 +9,22 @@
 
 get_header();
 ?>
-<div class="site-body-header">
-	<div class="site-body-header-inner container">
-		<h1 class="entry-title">
+<div class="page-header">
+	<div class="container">
+		<h1 class="page-header-title">
 			<?php
-			printf( esc_html__( '検索結果： %s', '_s_orign_orign' ), '<span>' . get_search_query() . '</span>' );
+			printf( esc_html__( '%s の検索結果', '_s_orign_orign' ), '<span>' . get_search_query() . '</span>' );
 			?>
 		</h1>
 	</div>
 </div><!-- .site-body-header -->
 <?php breadcrumb(); ?>
 <div class="site-body">
-	<div class="site-body-container container">
+	<div class="container">
 		<main id="primary" class="site-main">
 			<?php if ( have_posts() ) : ?>
-				<header class="page-header">
-				</header><!-- .page-header -->
+				<header class="main-page-header">
+				</header><!-- .main-page-header -->
 				<?php
 				/* Start the Loop */
 				while ( have_posts() ) :

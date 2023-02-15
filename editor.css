@@ -36,7 +36,7 @@ p {
 h1 {
   margin-bottom: 2em;
   color: #fff;
-  background-color: #3461ac;
+  background-color: #f1f1f1;
   margin-top: 0;
   padding-bottom: 0;
   display: flex;
@@ -46,15 +46,14 @@ h1 {
 }
 
 h3 {
-  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+  border-bottom: 1px solid #ccc;
   background: 0 0;
   padding: 0 0 0.5em;
 }
 
 h4 {
   padding: 0.5em;
-  background-color: rgba(0, 0, 0, 0.06);
-  border-radius: 5px;
+  background-color: #ccc;
 }
 
 h2,
@@ -75,57 +74,4 @@ h6:first-child {
 
 p {
   line-height: 1.5;
-}
-
-blockquote {
-  margin: 0;
-  padding: 1em 1.5em;
-  border-left: 4px solid #3461ac;
-  background-color: rgba(0, 0, 0, 0.02);
-}
-
-pre {
-  background: #eee;
-  font-family: "Courier 10 Pitch", courier, monospace;
-  line-height: 1.6;
-  overflow: auto;
-  padding: 1.6em;
-  font-family: monaco, consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
-}
-
-code {
-  font-family: monaco, consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
-}
-
-a {
-  color: #191970;
-  text-decoration: none;
-}
-a:hover, a:focus, a:active {
-  color: #4169e1;
-}
-a:focus {
-  outline: thin dotted;
-}
-a:hover, a:active {
-  outline: 0;
-}
-
-ul {
-  list-style: disc;
-}
-
-ol {
-  list-style: decimal;
-}
-
-dt {
-  font-weight: bold;
-  float: left;
-  clear: left;
-  margin-right: 0.5em;
-}
-
-dd {
-  margin-left: 1em;
 }/*# sourceMappingURL=editor.css.map */
